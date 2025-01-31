@@ -1,0 +1,23 @@
+@forward "fonts";
+@import "variables";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+p,
+span,
+a {
+  color: $--text-color;
+}
+
+#app {
+  font-family: 'Manrope', serif;
+  font-weight: $--regular;
+  width: 100%;
+  min-width: 360px;
+}

@@ -1,0 +1,112 @@
+section {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 clamp(2.5rem, -2.5rem + 6.25vw, 5rem);
+  padding: 64px clamp(6.25rem, 0.375rem + 7.344vw, 9.188rem);
+  gap: 10px;
+  border-radius: 10px;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  h2, span {
+    display: inline-block;
+    width: 337px;
+  }
+
+  h2 {
+    font-size: 32px;
+    font-weight: 400;
+  }
+
+  span {
+    font-size: 16px;
+    font-weight: 400;
+  }
+}
+
+.article-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+
+  article {
+    width: clamp(18.313rem, 0.938rem + 21.719vw, 27rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    padding: clamp(1.875rem, 0.625rem + 1.563vw, 2.5rem);
+    border-radius: 10px;
+    background-color: #EBF4FD;
+
+    h2 {
+      font-size: 24px;
+    }
+
+    div {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+
+      button {
+        width: 187px;
+        height: 54px;
+        background-color: transparent;
+        border-width: 1px;
+        border-radius: 6px;
+
+        span {
+          font-size: 16px;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  section {
+    flex-direction: column;
+    padding: clamp(2.5rem, 0rem + 5vw, 4rem) clamp(2.5rem, -3.854rem + 12.708vw, 6.313rem);
+  }
+
+  .text-container {
+
+    h2, span {
+      width: 100%;
+    }
+
+    h2 {
+      font-size: clamp(1.625rem, 1rem + 1.25vw, 2rem);
+    }
+  }
+
+  .article-container {
+    justify-content: center;
+    gap: 40px;
+
+    article {
+      width: clamp(22.188rem, 37.521rem + -30.667vw, 16.438rem);
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  section {
+    margin: 0 clamp(0rem, -2.045rem + 9.091vw, 2.5rem);
+    padding: 0 clamp(1.25rem, 0.227rem + 4.545vw, 2.5rem);
+  }
+
+  .article-container {
+    align-items: center;
+    flex-direction: column;
+
+    article {
+      width: clamp(20rem, 17.981rem + 8.974vw, 22.188rem);
+    }
+  }
+}

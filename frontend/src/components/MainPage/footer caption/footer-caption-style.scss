@@ -1,0 +1,55 @@
+@import "@/assets/scss/variables";
+
+section {
+  height: 452px;
+  display: flex;
+  justify-content: right;
+  border-radius: 10px;
+  margin-bottom: clamp(2.5rem, -2.5rem + 6.25vw, 5rem);
+  padding: 90px clamp(11.688rem, -12.813rem + 30.625vw, 23.938rem);
+  background-image: url("@/assets/media_content/CTA_bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.container {
+  width: 400px;
+  text-align: center;
+
+  h2 {
+    display: inline-block;
+    font-size: 32px;
+    font-weight: $--bold;
+    margin-bottom: 40px;
+  }
+}
+
+.request-button {
+  width: 198px;
+  height: 54px;
+  background-color: #0C92BF;
+  border: none;
+  border-radius: 6px;
+  text-align: center;
+
+  span {
+    color: #fff;
+    font-size: 16px;
+    font-weight: $--bold;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  section {
+    padding: clamp(2.5rem, -0.057rem + 11.364vw, 5.625rem) clamp(1.25rem, -7.29rem + 37.955vw, 11.688rem);
+  }
+
+  .container {
+
+    h2 {
+      font-size: clamp(1.625rem, 1.318rem + 1.364vw, 2rem);
+      margin-bottom: clamp(1.875rem, 1.364rem + 2.273vw, 2.5rem);
+    }
+  }
+}
