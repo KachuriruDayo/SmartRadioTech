@@ -1,10 +1,46 @@
 <script setup>
+import {nextTick, onMounted, ref} from "vue";
+
+const baseUrl = '/src/assets/media_content/';
+const images = [
+	{
+		image: 'start-overlay.png',
+		index: 0
+	},
+	{
+		image: 'beacon_tester_in_case_bg.png',
+		index: 1
+	},
+	{
+		image: 'beacon_tester_mini_in_case_bg.png',
+		index: 2
+	}
+]
+let activeImage = 0
+
+let currentImage = ref(baseUrl + images[activeImage].image)
+
+const nextImage = async () => {
+	let active = activeImage + 1;
+	if (active >= images.length) {
+		active = 0;
+	}
+	activeImage = active;
+	currentImage.value = baseUrl + images[activeImage].image;
+	await nextTick()
+}
+
+onMounted(() => {
+	setInterval(() => {
+		nextImage()
+	}, 7000);
+})
 </script>
 
 <template>
 	<section>
 		<div class="overlay-container">
-			<img class="overlay" src="@/assets/media_content/start-overlay.png" alt="overlay">
+			<img class="overlay" :src="currentImage" alt="overlay">
 			<h1>ELT test equipment you can rely on</h1>
 		</div>
 		<div class="content">

@@ -1,7 +1,24 @@
 @import "@/assets/scss/variables";
 
+@keyframes img_animation {
+  0% {
+    opacity: 0.3;
+  }
+  20% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    scale: 1.1;
+  }
+}
+
 section {
   position: relative;
+  overflow: hidden;
 
   h1 {
     font-size: 32px;
@@ -17,6 +34,7 @@ section {
   height: 100%;
   position: absolute;
   z-index: -1;
+  animation: img_animation 7s infinite linear;
 }
 
 .content {
@@ -103,6 +121,12 @@ section {
   }
 }
 
+@media screen and (max-width: 1280px) {
+  .content {
+    gap: clamp(1.563rem, -20.759rem + 35.714vw, 7.813rem);
+  }
+}
+
 @media screen and (max-width: 1000px) {
   section {
     display: flex;
@@ -110,7 +134,6 @@ section {
   }
 
   .content {
-    gap: clamp(2.5rem, -8.542rem + 22.083vw, 9.125rem);
 
     article {
       width: 100%;
@@ -134,7 +157,7 @@ section {
     h1 {
       width: clamp(15.625rem, 12.045rem + 15.909vw, 20rem);
       margin: clamp(1.25rem, 0.227rem + 4.545vw, 2.5rem);
-      padding: 0 0 clamp(7.75rem, 4.375rem + 15vw, 11.875rem) 0;
+      padding: 0 0 clamp(5.313rem, -1.191rem + 28.906vw, 16.875rem) 0;
       font-size: clamp(1.625rem, 1.318rem + 1.364vw, 2rem);
     }
   }

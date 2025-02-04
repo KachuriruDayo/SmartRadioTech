@@ -1,5 +1,5 @@
 <script setup>
-import DropdownBlock from "@/components/Ui-Kit/dropdown-block.vue";
+import DropdownBlock from "@/components/Ui-Kit/dropdown-Block.vue";
 import TabSvg1 from "@/assets/media_content/Vector (Stroke).svg"
 import TabSvg2 from "@/assets/media_content/Feature2.svg"
 import TabSvg3 from "@/assets/media_content/Feature3.svg"
@@ -14,7 +14,7 @@ import TabSvg5 from "@/assets/media_content/Feature5.svg"
 			<span>The key advantages of the testers that make them the right choice</span>
 		</div>
 		<div class="dropdown-container">
-			<DropdownBlock>
+			<DropdownBlock class="dropdown-block">
 				<template #title-svg><TabSvg1 class="title-svg"/></template>
 				<template #title><span>Manual assembly & high-quality components</span></template>
 				<template #text>
@@ -27,7 +27,7 @@ import TabSvg5 from "@/assets/media_content/Feature5.svg"
 					</p>
 				</template>
 			</DropdownBlock>
-			<DropdownBlock>
+			<DropdownBlock class="dropdown-block">
 				<template #title-svg><TabSvg2 class="title-svg"/></template>
 				<template #title><span>Precise measurements</span></template>
 				<template #text>
@@ -39,7 +39,7 @@ import TabSvg5 from "@/assets/media_content/Feature5.svg"
 					</p>
 				</template>
 			</DropdownBlock>
-			<DropdownBlock>
+			<DropdownBlock class="dropdown-block">
 				<template #title-svg><TabSvg3 class="title-svg"/></template>
 				<template #title><span>Long-time durability</span></template>
 				<template #text>
@@ -50,7 +50,7 @@ import TabSvg5 from "@/assets/media_content/Feature5.svg"
 					</p>
 				</template>
 			</DropdownBlock>
-			<DropdownBlock>
+			<DropdownBlock class="dropdown-block">
 				<template #title-svg><TabSvg4 class="title-svg"/></template>
 				<template #title><span>Automatic generation and printing test reports</span></template>
 				<template #text>
@@ -59,14 +59,15 @@ import TabSvg5 from "@/assets/media_content/Feature5.svg"
 						The one for ELT Tester 406 03 is compatible with Windows and macOS.
 						The data from the tester is sent to PC via USB cable. The software is free
 						of charge and can be downloaded on this website.
-
+					</P>
+					<p>
 						ELT Tester i406 Mini has its own integrated software for
 						managing test procedure and generating test reports.
 						No additional download is required. To get started, you only need a browser.
 					</p>
 				</template>
 			</DropdownBlock>
-			<DropdownBlock>
+			<DropdownBlock class="dropdown-block">
 				<template #title-svg><TabSvg5 class="title-svg"/></template>
 				<template #title><span>Official purchase and free worldwide delivery</span></template>
 				<template #text>

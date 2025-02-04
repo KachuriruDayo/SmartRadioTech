@@ -1,18 +1,39 @@
 <script setup>
 	import ArrowDown from "@/assets/media_content/Down.svg"
 	import LineSvg from "@/assets/media_content/Line.svg"
-	import LegacySvg from "@/assets/media_content/logo_legacy.svg"
-	import PhenixSvg from "@/assets/media_content/logo_phenix.svg"
-	import PrimeSvg from "@/assets/media_content/logo_prime.svg"
-	import HarbourSvg from "@/assets/media_content/logo_harbour.svg"
+	import { ref, useTemplateRef} from "vue";
+
+	const artcl = useTemplateRef('art_1')
+	let artWidth
+
+	const articleLenght = 4;
+	let currentArticle = ref(0);
+
+	function nextArticle () {
+		artWidth = artcl.value.clientWidth;
+		let actual = currentArticle.value += 1;
+		if (actual > articleLenght) {
+			actual = 0;
+		}
+		currentArticle.value = actual;
+	}
+
+	function prevArticle () {
+		artWidth = artcl.value.clientWidth;
+		let actual = currentArticle.value -= 1;
+		if (actual < 0) {
+			actual = articleLenght;
+		}
+		currentArticle.value = actual;
+	}
 </script>
 
 <template>
 	<section>
 		<h2>Client testimonials and professional trust</h2>
-		<div class="testimonials-container">
-			<article>
-				<LegacySvg/>
+		<div :key="currentArticle" class="testimonials-container" :style="{ marginLeft: -artWidth * currentArticle + 'px' }">
+			<article ref="art_1">
+				<img id="legacy" src="@/assets/media_content/logo_legacy.png" alt="legacy"/>
 				<div class="testimonial-text">
 					<p>”Hello, I bought my ELT tester mini equipment. First, the
 						customer service was excellent. Second, it was easy to buy.
@@ -26,7 +47,7 @@
 				</div>
 			</article>
 			<article>
-				<PhenixSvg/>
+				<img id="phenix" src="@/assets/media_content/logo_phenix jet.png" alt="phenix"/>
 				<div class="testimonial-text">
 					<p>
 						”We chose the ELT 406 03 testers for their reliability and ease of
@@ -49,7 +70,7 @@
 				</div>
 			</article>
 			<article>
-				<PrimeSvg/>
+				<img id="prime" src="@/assets/media_content/logo_prime.png" alt="prime"/>
 				<div class="testimonial-text">
 					<p>
 						”We have truly enjoyed your products. Thank
@@ -61,7 +82,7 @@
 				</div>
 			</article>
 			<article>
-				<HarbourSvg/>
+				<img id="harbour" src="@/assets/media_content/logo_harbour.png" alt="harbour"/>
 				<div class="testimonial-text">
 					<p>
 						”We found ELT Tester Mini to be a an interesting solution for
@@ -79,8 +100,8 @@
 		</div>
 
 		<div class="buttons-container">
-			<button><ArrowDown id="left"/></button>
-			<button><ArrowDown id="right"/></button>
+			<button @click="prevArticle()"><ArrowDown id="prev"/></button>
+			<button @click="nextArticle()"><ArrowDown id="next"/></button>
 		</div>
 	</section>
 </template>

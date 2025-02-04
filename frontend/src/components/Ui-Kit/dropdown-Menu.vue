@@ -1,31 +1,47 @@
-<script>
-	export default {
-		data() {
-			return {
-				isOpen: false,
-			}
-		}
-	}
+<script setup>
+	defineProps({
+		isOpen: Boolean
+	})
 </script>
 
 <template>
-  <div class='dropdown-btn' @click="isOpen = !isOpen">
+  <div class='dropdown-btn'>
     <slot name='trigger'></slot>
+		<transition name="fade" class='dropdown-content'>
+			<div class='dropdownBody' v-if='isOpen'>
+				<slot name='body'></slot>
+			</div>
+		</transition>
   </div>
-	<transition class='dropdown-content' appear>
-		<div class='dropdownBody' v-if='isOpen'>
-			<slot name='body'></slot>
-		</div>
-	</transition>
 </template>
 
-<style scoped>
-	.dropdown-btn {
-		position: relative;
-	}
+<style lang='scss' scoped>
+.fade-enter-active,
+.fade-leave-active {
+	transition: all 0.3s ease-out;
+}
 
-	.dropdownBody {
-		position: absolute;
-		top: 50px;
-	}
+.fade-enter-to,
+.fade-leave-from {
+ 	opacity: 1;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+	opacity: 0;
+}
+
+.dropdown-btn {
+	position: relative;
+}
+
+.dropdownBody {
+	position: absolute;
+	background-color: #fff;
+	top: calc(100% + 15px);
+	width: max-content;
+	border-radius: 0 0 10px 10px;
+	z-index: 1;
+}
+
 </style>
