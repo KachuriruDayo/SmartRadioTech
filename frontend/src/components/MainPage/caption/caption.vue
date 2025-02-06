@@ -1,24 +1,27 @@
 <script setup>
+import StartImg from "@/assets/media_content/start-overlay.png"
+import SecondImg from "@/assets/media_content/beacon_tester_in_case_bg.png"
+import LastImg from "@/assets/media_content/beacon_tester_mini_in_case_bg.png"
+
 import {nextTick, onMounted, ref} from "vue";
 
-const baseUrl = '/src/assets/media_content/';
 const images = [
 	{
-		image: 'start-overlay.png',
+		image: StartImg,
 		index: 0
 	},
 	{
-		image: 'beacon_tester_in_case_bg.png',
+		image: SecondImg,
 		index: 1
 	},
 	{
-		image: 'beacon_tester_mini_in_case_bg.png',
+		image: LastImg,
 		index: 2
 	}
 ]
 let activeImage = 0
 
-let currentImage = ref(baseUrl + images[activeImage].image)
+let currentImage = ref(images[activeImage].image)
 
 const nextImage = async () => {
 	let active = activeImage + 1;
@@ -26,7 +29,7 @@ const nextImage = async () => {
 		active = 0;
 	}
 	activeImage = active;
-	currentImage.value = baseUrl + images[activeImage].image;
+	currentImage.value = images[activeImage].image;
 	await nextTick()
 }
 
@@ -69,5 +72,5 @@ onMounted(() => {
 </template>
 
 <style scoped>
-	@import "caption-style.scss";
+@import "caption-style.scss";
 </style>

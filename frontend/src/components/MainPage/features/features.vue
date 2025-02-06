@@ -1,4 +1,5 @@
 <script setup>
+import ArrowSvg from "@/assets/media_content/ArrowInactive.svg"
 </script>
 
 <template>
@@ -8,34 +9,28 @@
       <ul class="features-ul">
         <li>
           <article class="feature-article">
-            <button class="arrow-nav-button">
-              <img class="arrow-img" src="../../../assets/media_content/ArrowInactive.svg" alt="arrowInactive"/>
-            </button>
+						<div class="arrow-container"><ArrowSvg class="arrow-img"/></div>
             <p class ='bold-text'>Checking the functionality of the emergency beacons operating via the Cospas-Sarsat system</p>
           </article>
         </li>
         <li>
           <article class="feature-article">
-            <button class="arrow-nav-button">
-              <img class="arrow-img" src="../../../assets/media_content/ArrowInactive.svg" alt="arrowInactive"/>
-            </button>
-          <p class ='bold-text' >Compatability with beacons of any manufacturer: Artex, ACK, Orolia, Kannad, ACR, and all other</p>
-        </article>
+						<div class="arrow-container"><ArrowSvg class="arrow-img"/></div>
+          	<p class ='bold-text' >Compatability with beacons of any manufacturer: Artex, ACK, Orolia, Kannad, ACR, and all other</p>
+        	</article>
         </li>
         <li>
           <article class="feature-article">
-            <button class="arrow-nav-button">
-              <img class="arrow-img" src="../../../assets/media_content/ArrowInactive.svg" alt="arrowInactive"/>
-            </button>
-          <p class ='bold-text' >Full compliance with the requirements of CAA/EuroCAE and EASA, FAA Part 91.207 and CAR 571 Appendix G</p>
-        </article>
+						<div class="arrow-container"><ArrowSvg class="arrow-img"/></div>
+          	<p class ='bold-text' >Full compliance with the requirements of CAA/EuroCAE and EASA, FAA Part 91.207 and CAR 571 Appendix G</p>
+        	</article>
         </li>
       </ul>
     </div>
 
     <div class="product-container">
       <article class ="product-article">
-        <img class ="product-img" src="../../../assets/media_content/firstPng.png" alt="firstImg"/>
+        <img class ="product-img" src="@/assets/media_content/firstPng.png" alt="firstImg"/>
         <div class="product-info-container">
           <div class="product-info">
             <h2>ELT Tester 406 03</h2>
@@ -55,7 +50,7 @@
         </div>
       </article>
       <article class ="product-article">
-        <img class ="product-img" src="../../../assets/media_content/secondPng.png" alt="secondImg"/>
+        <img class ="product-img" src="@/assets/media_content/secondPng.png" alt="secondImg"/>
         <div class="product-info-container">
           <div class="product-info">
             <h2>ELT Tester i406 Mini</h2>

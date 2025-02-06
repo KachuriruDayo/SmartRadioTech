@@ -11,7 +11,9 @@
 				<div class="img-container">
 					<img src="@/assets/media_content/About_Block_20years.png" alt="20 yers label">
 				</div>
-				<AeromarineSvg/>
+				<div class="svg-container">
+					<AeromarineSvg/>
+				</div>
 				<p>
 					Aeromarine SRT is the manufacturer of ELT testers with 20+
 					years of development and production experience.
@@ -24,7 +26,9 @@
 			</article>
 			<article>
 				<div class="img-container article-img"></div>
-				<AeroTechSvg/>
+				<div class="svg-container">
+					<AeroTechSvg/>
+				</div>
 				<p>
 					Smart Radio Tech is the exclusive supplier of Aeromarine SRT ELT testers.
 					It deals with worldwide distribution, accounting and finance.

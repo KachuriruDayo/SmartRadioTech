@@ -28,10 +28,12 @@
 
 <template>
   <header>
-    <div class="logo">
-      <LogoSvg class="logo-svg" />
-      <span>Exclusive supplier of Aeromarine SRT products</span>
-    </div>
+		<RouterLink class="navLink_long" to="/">
+			<div class="logo">
+				<LogoSvg class="logo-svg" />
+				<span>Exclusive supplier of Aeromarine SRT products</span>
+			</div>
+		</RouterLink>
 
     <nav class="nav">
       <div>
