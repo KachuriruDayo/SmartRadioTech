@@ -1,0 +1,171 @@
+@import "@/assets/scss/variables";
+
+section {
+  position: relative;
+  margin-bottom: 80px;
+
+  h1 {
+    font-size: 32px;
+    font-weight: 600;
+    color: #0C92BF;
+    padding-top: 91px;
+    padding-left: clamp(2.5rem, -2.5rem + 6.25vw, 5rem);
+  }
+}
+
+.overlay-container {
+  overflow: hidden;
+}
+
+.product-image {
+  width: 562px;
+  height: 847px;
+  background-image: url("@/assets/media_content/ELT_Tester_406_03_photo.png");
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: absolute;
+  right: clamp(0rem, -10rem + 12.5vw, 5rem);
+  top: clamp(0rem, -3.75rem + 4.688vw, 1.875rem);
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  background-image: url("@/assets/media_content/captionProduct.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: absolute;
+  z-index: -2;
+}
+
+.content {
+  position: relative;
+  padding: 0 clamp(2.5rem, -2.5rem + 6.25vw, 5rem) clamp(2.5rem, -2rem + 5.625vw, 4.75rem) clamp(2.5rem, -2.5rem + 6.25vw, 5rem);
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-bottom: clamp(8.75rem, -1.25rem + 12.5vw, 13.75rem);
+
+  article {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 676px;
+
+    h2 {
+      display: block;
+      margin-top: 20px;
+      font-size: 32px;
+      font-weight: 400;
+    }
+  }
+}
+
+.checkmark-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  span {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+.buttons-container {
+  display: flex;
+  gap: 10px;
+}
+
+.request-button {
+  height: 54px;
+  padding: 15px 40px;
+  background-color: #0C92BF;
+  border: none;
+  border-radius: 6px;
+  text-align: center;
+
+  span {
+    color: #fff;
+    font-size: 16px;
+    font-weight: $--bold;
+    white-space: nowrap;
+  }
+}
+
+.details-button {
+  height: 54px;
+  padding: 15px 40px;
+  background-color: transparent;
+  border-width: 1px;
+  border-radius: 6px;
+
+  span {
+    color: #363843;
+    font-size: 16px;
+    font-weight: $--bold;
+    white-space: nowrap;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  section {
+    margin-bottom: 0;
+  }
+
+  .content {
+    padding-bottom: clamp(3.125rem, -6.25rem + 18.75vw, 8.75rem);
+    margin-bottom: clamp(5rem, -1.25rem + 12.5vw, 8.75rem);
+  }
+
+  .product-image {
+    width: clamp(29.938rem, 24.585rem + 13.175vw, 35.125rem);
+    height: clamp(39.063rem, 21.719rem + 42.692vw, 52.938rem);
+  }
+}
+
+@media screen and (max-width: 1170px) {
+  section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .content {
+    margin-bottom: 0;
+
+    article {
+      width: clamp(20rem, 16.924rem + 13.671vw, 26.75rem);
+      margin-top: 20px;
+      gap: 20px;
+    }
+  }
+
+  .overlay-container {
+    position: relative;
+
+    h1 {
+      margin: clamp(1.25rem, 0.227rem + 4.545vw, 2.5rem);
+      padding: 0 0 clamp(13.25rem, 32.439rem + -38.378vw, 4.375rem) 0;
+      font-size: clamp(1.625rem, 1.318rem + 1.364vw, 2rem);
+    }
+  }
+}
+
+
+@media screen and (max-width: 800px) {
+  .content {
+    padding: 0 clamp(1.25rem, 0.227rem + 4.545vw, 2.5rem) 40px clamp(1.25rem, 0.227rem + 4.545vw, 2.5rem);
+  }
+
+  .product-image {
+    width: clamp(20rem, 11.869rem + 36.136vw, 29.938rem);
+    height: clamp(23.063rem, 11.761rem + 50.227vw, 36.875rem);
+  }
+
+  .buttons-container {
+    flex-direction: column;
+  }
+}

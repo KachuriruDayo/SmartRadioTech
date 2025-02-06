@@ -43,7 +43,7 @@
 						</button>
           </template>
           <template #body>
-						<RouterLink class="navLink_long" to="/"><button><span>Tester 406 03</span></button></RouterLink>
+						<RouterLink class="navLink_long" to="/production/elt_tester-406-03"><button><span>Tester 406 03</span></button></RouterLink>
 						<RouterLink class="navLink_long" to="/"><button><span>ELT Tester i406 Mini</span></button></RouterLink>
           </template>
         </DropdownMenu>
