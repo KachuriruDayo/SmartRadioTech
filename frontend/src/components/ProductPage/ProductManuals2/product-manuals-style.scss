@@ -18,13 +18,14 @@ section {
 .dimension-info {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 30px;
   padding: 40px;
   border-radius: 10px;
   border: 1px solid #DDDDDD;
 
   img {
-    width: clamp(19.563rem, 10.938rem + 10.781vw, 23.875rem);
+    width: 218px;
+    margin: 0 clamp(4.438rem, -13.688rem + 22.656vw, 13.5rem) 23px clamp(8rem, 5.75rem + 2.813vw, 9.125rem);
   }
 }
 
@@ -60,7 +61,7 @@ section {
 .demonstration-content {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 30px;
 }
 
 .demonstration-video {
@@ -80,46 +81,11 @@ section {
   gap: 20px;
 }
 
-.video-slider {
-  position: relative;
-  overflow: hidden;
-}
-
-#toggle {
-  cursor: pointer;
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  top: 40%;
-  left: 90%;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background-color: #fff;
-
-  div {
-    position: relative;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    border: 1px solid #363843;
-
-    svg {
-      transform: rotate(-90deg);
-      transition: transform 0.3s ease-out;
-    }
-  }
-}
-
 #play {
   cursor: pointer;
   position: absolute;
-  top: 38%;
-  left: 43%;
+  top: 42%;
+  left: 44%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -156,19 +122,8 @@ section {
   }
 }
 
-.svg_active {
-  transform: rotate(90deg) !important;
-}
-
-.button_prev {
-  top: 40% !important;
-  left: 0 !important;
-}
-
 .video-container{
-  display: grid;
-  grid-template-columns: repeat(2, clamp(30.813rem, 4.313rem + 33.125vw, 44.063rem));
-  grid-template-rows: clamp(17.688rem, 2.563rem + 18.906vw, 25.25rem);
+  display: flex;
   gap: 10px;
 }
 
@@ -190,7 +145,7 @@ section {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-bottom: clamp(0rem, -10rem + 12.5vw, 5rem);
+  margin-bottom: clamp(0rem, 17.438rem + -14.531vw, 5.813rem);
 }
 
 .product-manuals {
@@ -199,13 +154,21 @@ section {
   gap: 10px;
 
   article {
-    width: clamp(22.75rem, -37.375rem + 75.156vw, 52.813rem);
+    width: clamp(11.5rem, 0.125rem + 14.219vw, 17.188rem);
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
     gap: 20px;
     border-radius: 10px;
     border: 1px solid #DDDDDD;
-    padding: 40px;
+    padding: clamp(1.875rem, 0.625rem + 1.563vw, 2.5rem);
+
+    a {
+      display: block;
+      font-size: 16px;
+      font-weight: 600;
+      color: #0C92BF;
+    }
   }
 }
 
@@ -219,12 +182,6 @@ section {
     display: flex;
     gap: 10px;
     align-items: center;
-  }
-}
-
-@media screen and (max-width: 1480px) {
-  .product-manuals {
-    flex-direction: column;
   }
 }
 
@@ -247,10 +204,6 @@ section {
     gap: 40px;
   }
 
-  .video-container {
-    padding-left: clamp(0rem, -16.875rem + 33.75vw, 10.125rem) !important;
-  }
-
   .product-manuals {
     flex-direction: row;
   }
@@ -262,12 +215,8 @@ section {
   }
 
   #play {
-    top: clamp(2.313rem, -0.653rem + 13.182vw, 5.938rem);
-    left: clamp(6.438rem, 0.966rem + 24.318vw, 13.125rem);
-  }
-
-  #toggle {
-    display: none;
+    top: 35%;
+    left: 37%;
   }
 
   .dimension-info {
@@ -275,6 +224,10 @@ section {
     img {
       width: clamp(15.375rem, 12.972rem + 10.682vw, 18.313rem);
     }
+  }
+
+  .YT-link {
+    margin-bottom: clamp(0rem, -4.756rem + 21.136vw, 5.813rem);
   }
 
   .product-manuals {
@@ -293,6 +246,10 @@ section {
 @media screen and (max-width: 770px) {
   .dimension-info {
     flex-direction: column;
+
+    img {
+      margin: 0;
+    }
   }
 
   .video-container {
@@ -301,5 +258,10 @@ section {
 
   .product-manuals {
     flex-direction: column;
+
+    article {
+      align-items: center;
+      width: 100%;
+    }
   }
 }

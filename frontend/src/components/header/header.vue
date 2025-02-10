@@ -7,7 +7,10 @@
  import BurgerMenuSvg from "@/assets/media_content/Menu.svg";
  import { RouterLink } from 'vue-router'
  import {ref} from "vue";
+ import {useRouter} from "vue-router";
  import DropdownBlock from "@/components/Ui-Kit/burger-Dropdown.vue";
+
+ const router = useRouter()
 
  let isOpen = ref({
 	 first: false,
@@ -23,6 +26,10 @@
 		 isOpen.value.second = !isOpen.value.second
 		 isOpen.value.first === true ? isOpen.value.first = false : true
 	 }
+ }
+
+ const navigate = (link) => {
+	 router.push(link)
  }
 </script>
 
@@ -46,7 +53,7 @@
           </template>
           <template #body>
 						<RouterLink class="navLink_long" to="/production/elt_tester-406-03"><button><span>Tester 406 03</span></button></RouterLink>
-						<RouterLink class="navLink_long" to="/"><button><span>ELT Tester i406 Mini</span></button></RouterLink>
+						<RouterLink class="navLink_long" to="/production/elt_tester-i406-mini"><button><span>ELT Tester i406 Mini</span></button></RouterLink>
           </template>
         </DropdownMenu>
         <DropdownMenu class="dropdown-menu" :isOpen="isOpen.second" @click="toggle('second')">
@@ -84,9 +91,9 @@
 						Product
 					</template>
 					<template #body>
-						<div id="body">
-							<RouterLink class="navLink" to="/"><button><span>Tester 406 03</span></button></RouterLink>
-							<RouterLink class="navLink" to="/"><button><span>ELT Tester i406 Mini</span></button></RouterLink>
+						<div id="body" class="navLink">
+							<button @click="navigate('/production/elt_tester-406-03')"><span>Tester 406 03</span></button>
+							<button @click="navigate('/production/elt_tester-i406-mini')"><span>ELT Tester i406 Mini</span></button>
 						</div>
 					</template>
 				</DropdownBlock>

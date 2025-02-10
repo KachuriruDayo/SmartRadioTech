@@ -1,5 +1,13 @@
 <script setup>
+import {useRouter} from "vue-router";
 import ArrowSvg from "@/assets/media_content/ArrowInactive.svg"
+
+const router = useRouter()
+
+const navigation = (link) => {
+	router.push(link)
+}
+
 </script>
 
 <template>
@@ -45,7 +53,7 @@ import ArrowSvg from "@/assets/media_content/ArrowInactive.svg"
 
           <div class="product-buttons-container">
             <button class="request-button">Request for quote</button>
-            <button class="details-button">More details</button>
+            <button class="details-button" @click="navigation('/production/elt_tester-406-03')">More details</button>
           </div>
         </div>
       </article>
@@ -65,7 +73,7 @@ import ArrowSvg from "@/assets/media_content/ArrowInactive.svg"
 
           <div class="product-buttons-container">
             <button class="request-button" >Request for quote</button>
-            <button class="details-button" >More details</button>
+            <button class="details-button" @click="navigation('/production/elt_tester-i406-mini')">More details</button>
           </div>
         </div>
       </article>

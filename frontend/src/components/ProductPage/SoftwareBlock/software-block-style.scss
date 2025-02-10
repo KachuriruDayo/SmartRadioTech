@@ -1,0 +1,140 @@
+.title-style {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 400;
+}
+
+.bold-text-medium {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.bold-text-small {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.regular-text-small {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 80px 0;
+
+  h2 {
+    margin-bottom: 30px;
+    width: 615px;
+  }
+
+  a {
+    color: #0C92BF;
+  }
+}
+
+.container {
+  display: flex;
+
+}
+
+.article {
+  height: fit-content;
+  display: flex;
+  gap: 20px;
+  padding: 40px;
+  border: 1px solid #DDDDDD;
+  border-radius: 10px;
+}
+
+.svg-container {
+  display: flex;
+  width: 94px;
+  height: 94px;
+  justify-content: center;
+  align-items: center;
+}
+
+.article-text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: clamp(0rem, -4.375rem + 5.469vw, 2.188rem) 0  0  40px;
+}
+
+.advantage-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.advantage-item {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.checkmark-svg {
+  width: 24px;
+  height: 24px;
+}
+
+.links-container {
+  display: flex;
+  gap: 40px;
+
+  a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  div {
+    width: 34px;
+    height: 34px;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  section {
+    padding: 0 40px;
+  }
+
+  .advantage-container {
+    width: clamp(16.313rem, -13.583rem + 59.792vw, 34.25rem);
+  }
+}
+
+@media screen and (max-width: 800px) {
+  section {
+    padding: 0 clamp(1.25rem, 0.227rem + 4.545vw, 2.5rem);
+  }
+
+  .article {
+    gap: clamp(1.25rem, 0.739rem + 2.273vw, 1.875rem);
+  }
+
+  .title-style {
+    width: clamp(20rem, 4.915rem + 67.045vw, 38.438rem);
+  }
+
+  .links-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    flex-direction: column;
+    gap: 30px;
+  }
+}

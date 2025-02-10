@@ -28,18 +28,20 @@ function nextArticle () {
 
 <template>
 	<section>
-		<div class="dimensions">
-			<div class="dimension">
+		<div class="dimensions flex_block">
+			<div class="dimension flex_block">
 				<h2>Dimensions & weight</h2>
 				<div class="dimension-info">
-					<span>Dimensions: 195 x 101 x 43 mm</span>
-					<span>Weight: 0.55 kg</span>
-					<span>Total weight in case: 1.5 kg</span>
-					<span>Total weight in box: 1.3 kg</span>
+					<div class="dimension-text">
+						<span>Dimensions: 195 x 101 x 43 mm</span>
+						<span>Weight: 0.55 kg</span>
+						<span>Total weight in case: 1.5 kg</span>
+						<span>Total weight in box: 1.3 kg</span>
+					</div>
 					<img src="@/assets/media_content/scheme1.png" alt="product scheme">
 				</div>
 			</div>
-			<div class="conditions">
+			<div class="conditions flex_block">
 				<h2>Operating conditions</h2>
 				<p>
 					The tester is designed to operate in
@@ -47,18 +49,21 @@ function nextArticle () {
 				</p>
 			</div>
 		</div>
-		<div class="demonstration">
+		<div class="demonstration flex_block">
 			<h2>Demonstration</h2>
 			<div class="demonstration-content">
 				<div class="demonstration-video">
 					<div class="video-slider">
-						<div :key="currentArticle" class="video-list" :style="{ marginLeft: 25 + -artWidth * currentArticle + 'px' }">
-								<div class="video-container">
-									<img ref="vid_1" class="slider-item" src="@/assets/media_content/video_1.png"  alt="Product video"/>
-									<img class="slider-item" src="@/assets/media_content/video_2.png"  alt="Product video"/>
-								</div>
+						<div class="video-container" :key="currentArticle" :style="{ marginLeft: 25 + -artWidth * currentArticle + 'px' }">
+							<div class="video-item-container">
+								<img ref="vid_1" class="slider-item" src="@/assets/media_content/video_1.png"  alt="Product video"/>
+								<div id="play"><div><PlaySvg/></div></div>
+							</div>
+							<div class="video-item-container">
+								<img class="slider-item" src="@/assets/media_content/video_2.png"  alt="Product video"/>
+								<div id="play"><div><PlaySvg/></div></div>
+							</div>
 						</div>
-						<div id="play" :class="{last_img_toggle: toggle}"><div><PlaySvg/></div></div>
 						<div id="toggle" :class="{button_prev: toggle}" @click="nextArticle()"><div><DownSvg :class="{svg_active: toggle}"/></div></div>
 					</div>
 					<div class="video-description">

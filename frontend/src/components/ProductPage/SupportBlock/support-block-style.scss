@@ -1,0 +1,189 @@
+* {
+  z-index: 2;
+}
+
+.title-regular {
+  font-size: 32px;
+  font-weight: 400;
+}
+
+.article-title-bold {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.article-text-regular {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+section {
+  position: relative;
+  display:  flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: clamp(25rem, -0.375rem + 31.719vw, 37.688rem);
+  margin: 0 clamp(2.5rem, -2.5rem + 6.25vw, 5rem);
+  padding: 64px clamp(6.25rem, -18.125rem + 30.469vw, 18.438rem);
+  border-radius: 10px;
+  background-color: #F5F8FA;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: 10px;
+  background-image: url("@/assets/media_content/SupportBlockImg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 55%;
+
+  svg {
+    display: block;
+    width: 203px;
+    position: relative;
+  }
+
+  p {
+    position: absolute;
+    top: 7px;
+    left: 14px;
+    font-size: clamp(0.875rem, 0.458rem + 0.833vw, 1.125rem);
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+}
+
+.first-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+}
+
+.article-container {
+  display: flex;
+  gap: 10px;
+
+  article {
+    display: flex;
+    flex-direction: column;
+    width: clamp(20.375rem, 13.125rem + 9.063vw, 24rem);
+    gap: 10px;
+    padding: 30px 40px;
+    border: 1px solid #0C92BF;
+    border-radius: 10px;
+    background-color: #F5F8FA;
+  }
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.second-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 36px;
+
+  h3 {
+    width: 500px;
+    text-align: center;
+  }
+}
+
+.request-button {
+  width: 198px;
+  height: 54px;
+  background-color: #0C92BF;
+  border: none;
+  border-radius: 6px;
+
+  span{
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .title-regular {
+    font-size: clamp(1.625rem, 1rem + 1.25vw, 2rem);
+  }
+
+  section {
+    margin: 0 clamp(0rem, -4.167rem + 8.333vw, 2.5rem);
+    padding: clamp(2.5rem, 0.104rem + 4.792vw, 3.938rem) clamp(2.5rem, -3.75rem + 12.5vw, 6.25rem);
+    gap: clamp(22.875rem, 19.333rem + 7.083vw, 25rem);
+  }
+
+  .article-container  {
+
+    article {
+      flex-direction: row;
+      gap: 10px;
+    }
+  }
+
+  .text-container {
+    gap: 10px;
+  }
+
+  .overlay-text {
+    svg {
+      width: clamp(9.75rem, 4.854rem + 9.792vw, 12.688rem);
+    }
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .article-container {
+    flex-direction: column;
+
+    article {
+      width: 100%;
+      padding: 30px;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  section {
+    height: 1400px;
+    gap: clamp(15.375rem, 9.239rem + 27.273vw, 22.875rem);
+    padding: clamp(2.5rem, 0.104rem + 4.792vw, 3.938rem) clamp(1.25rem, 0.227rem + 4.545vw, 2.5rem);
+  }
+
+  .article-container {
+
+    article {
+      padding: clamp(1.25rem, 0.739rem + 2.273vw, 1.875rem);
+    }
+  }
+
+  .second-content {
+
+    h3 {
+    width: clamp(20rem, 10.795rem + 40.909vw, 31.25rem);
+    }
+  }
+
+  .overlay-content {
+    top: 560px;
+    left: 430px;
+  }
+}

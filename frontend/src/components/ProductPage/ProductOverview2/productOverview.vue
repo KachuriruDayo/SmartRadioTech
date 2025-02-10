@@ -32,55 +32,55 @@ function prevArticle () {
 	<div class="content">
 		<div class="gallery">
 			<div class="image-container">
-				<img class="gallery-item" src="@/assets/media_content/ELT_Tester_406_03_foto1.png"  alt="Product image"/>
+				<img class="gallery-item" src="@/assets/media_content/Overview2/ELT_Tester_i406_Mini_foto1.png"  alt="Product image"/>
 			</div>
 			<div class="image-container">
-				<img class="gallery-item" src="@/assets/media_content/ELT_Tester_406_03_foto2.png"  alt="Product image"/>
+				<img class="gallery-item" src="@/assets/media_content/Overview2/ELT_Tester_i406_Mini_foto2.png"  alt="Product image"/>
 			</div>
 			<div class="image-container">
-				<img class="gallery-item" src="@/assets/media_content/ELT_Tester_406_03_foto3.png"  alt="Product image"/>
+				<img class="gallery-item" src="@/assets/media_content/Overview2/ELT_Tester_i406_Mini_foto3.png"  alt="Product image"/>
 			</div>
 			<div class="image-container">
-				<img class="gallery-item" src="@/assets/media_content/ELT_Tester_406_03_foto4.png"  alt="Product image"/>
+				<img class="gallery-item" src="@/assets/media_content/Overview2/ELT_Tester_i406_Mini_foto4.png"  alt="Product image"/>
 			</div>
 			<div class="image-container">
-				<img class="gallery-item" src="@/assets/media_content/ELT_Tester_406_03_foto5.png"  alt="Product image"/>
+				<img class="gallery-item" src="@/assets/media_content/Overview2/ELT_Tester_i406_Mini_foto5.png"  alt="Product image"/>
 			</div>
 			<div class="image-container">
-				<img class="gallery-item" src="@/assets/media_content/ELT_Tester_406_03_foto6.png"  alt="Product image"/>
+				<img class="gallery-item" src="@/assets/media_content/Overview2/ELT_Tester_i406_Mini_foto6.png"  alt="Product image"/>
 			</div>
 			<div class="image-container">
-				<img class="gallery-item" src="@/assets/media_content/ELT_Tester_406_03_foto7.png"  alt="Product image"/>
+				<img class="gallery-item" src="@/assets/media_content/Overview2/ELT_Tester_i406_Mini_foto7.png"  alt="Product image"/>
 			</div>
 			<div class="image-container">
-				<img class="gallery-item" src="@/assets/media_content/ELT_Tester_406_03_foto8.png"  alt="Product image"/>
+				<img class="gallery-item" src="@/assets/media_content/Overview2/ELT_Tester_i406_Mini_foto8.png"  alt="Product image"/>
 			</div>
 		</div>
 		<div class="gallery-mobile">
 			<div :key="currentArticle" class="gallery-list" :style="{ marginLeft: -275 * currentArticle + 'px' }">
 				<div class="image-container">
-					<img class="gallery-item" src="@/assets/media_content/ELT_Tester_406_03_foto1.png"  alt="Product image"/>
+					<img class="gallery-item" src="@/assets/media_content/Overview2/ELT_Tester_i406_Mini_foto1.png"  alt="Product image"/>
 				</div>
 				<div class="image-container">
-					<img class="gallery-item" src="@/assets/media_content/ELT_Tester_406_03_foto2.png"  alt="Product image"/>
+					<img class="gallery-item" src="@/assets/media_content/Overview2/ELT_Tester_i406_Mini_foto2.png"  alt="Product image"/>
 				</div>
 				<div class="image-container">
-					<img class="gallery-item" src="@/assets/media_content/ELT_Tester_406_03_foto3.png"  alt="Product image"/>
+					<img class="gallery-item" src="@/assets/media_content/Overview2/ELT_Tester_i406_Mini_foto3.png"  alt="Product image"/>
 				</div>
 				<div class="image-container">
-					<img class="gallery-item" src="@/assets/media_content/ELT_Tester_406_03_foto4.png"  alt="Product image"/>
+					<img class="gallery-item" src="@/assets/media_content/Overview2/ELT_Tester_i406_Mini_foto4.png"  alt="Product image"/>
 				</div>
 				<div class="image-container">
-					<img class="gallery-item" src="@/assets/media_content/ELT_Tester_406_03_foto5.png"  alt="Product image"/>
+					<img class="gallery-item" src="@/assets/media_content/Overview2/ELT_Tester_i406_Mini_foto5.png"  alt="Product image"/>
 				</div>
 				<div class="image-container">
-					<img class="gallery-item" src="@/assets/media_content/ELT_Tester_406_03_foto6.png"  alt="Product image"/>
+					<img class="gallery-item" src="@/assets/media_content/Overview2/ELT_Tester_i406_Mini_foto6.png"  alt="Product image"/>
 				</div>
 				<div class="image-container">
-					<img class="gallery-item" src="@/assets/media_content/ELT_Tester_406_03_foto7.png"  alt="Product image"/>
+					<img class="gallery-item" src="@/assets/media_content/Overview2/ELT_Tester_i406_Mini_foto7.png"  alt="Product image"/>
 				</div>
 				<div class="image-container">
-					<img class="gallery-item" src="@/assets/media_content/ELT_Tester_406_03_foto8.png"  alt="Product image"/>
+					<img class="gallery-item" src="@/assets/media_content/Overview2/ELT_Tester_i406_Mini_foto8.png"  alt="Product image"/>
 				</div>
 			</div>
 			<div id="prev" @click="prevArticle()"></div>
@@ -103,42 +103,49 @@ function prevArticle () {
 			<div class="details-description flex_block ">
 				<h3 class="title-middle-regular">Description</h3>
 				<div class="description-text" :class="{description_list_active: toggleMobile}">
-					<p>ELT Tester 406 03 is designed for checking avionics emergency locator transmitters (ELTs)
-						operating through the Cospas-Sarsat system. It can also be used to test EPIRBs and PLBs
-						(including beacons with RLS function). Apply this ELT tester during annual and periodical
-						ELT inspections, as well as for verification after ELT encoding or installation.</p>
+					<p>ELT Tester i406 Mini is a small and lightweight tool for testing any emergency location transmitters (ELTs). Use
+						this tester during annual and periodical ELT inspections, as well as for verification
+						after ELT encoding or installation.</p>
 
-					<p>ELT Tester 406 03 can receive messages from any ELT transmitting either in test mode or in real alert emergency mode.</p>
+					<p>The device can receive and decode messages from any 406 MHz beacon transmitting either in test mode or
+						in real alert emergency mode. Please note, the scope of this tester does not include
+						testing beacons with the RLS function.</p>
 
-					<p>The device receives and decodes the signal from the ELT and displays at the user's choice
-						either the НЕХ code or the message 1-112 bit, as well as all the decoded information.
-						Besides, the tester checks the signal parameters on channels 121.5 MHz and 243 MHz.</p>
+					<p>The tester provides demodulation and decoding of Cospas-Sarsat messages. It ensures measurement of received signal
+						parameters on frequencies: 406 MHz, 121.5 MHz, 243 MHz.
+						The tester receives and decodes the signal from the ELT and displays,
+						at the user's choice, either the НЕХ code or the message 1-112 bit, as well
+						as all the measured parameters in text format.</p>
 
-					<p>The approximate continuous operation time of the tester from internal batteries is about 6 hours.</p>
+					<p>To take measurements, ELT Tester i406 Mini needs an additional device: a smartphone,
+						a tablet, a laptop or a desktop PC. The tester is connected to any of these devices via the tester's Wi-Fi.</p>
 
-					<p>ELT Tester 406 03 has an intuitive interface and does not need any additional devices for operation.
-						After the tests are completed, all measurement results are saved in the tester’s
-						internal non-volatile memory (up to 10 results).</p>
+					<p>For managing test procedures, the special integrated software is used; it should be run in the browser. All operations
+						are performed through the browser as well. Please consider: the test results are displayed on the screen of
+						the connected device, though they are stored in the tester’s memory. ELT Tester i406 Mini is
+						equipped with an internal 4 GB server for storing the software itself, and for saving and storing the test results.</p>
 
-					<p>The test results can also be uploaded to a PC. For it, a specialized user-friendly PC
-						application is used, the connection via USB cable is very easy. You can process the
-						data and automatically generate test reports in DOC or PDF format. The measurement
-						results can be saved in the software on your PC in unlimited quantities.
-						The software has a cloud version for storing the data and working with it from another device.</p>
+					<p>After completing the testing procedure and saving the measurement results, you can automatically generate a test report in
+						the needed format, and then print it or save for future use. All test results can be viewed through the
+						connected smartphone, tablet, laptop or desktop PC at any time.</p>
+
+					<p>If this device is used by several persons, all data saved by different users is stored in the tester’s
+						memory. Information about the user (inspector) will be added to the measurements provided
+						by this inspector and will be indicated in the generated test reports.</p>
 				</div>
 				<span class="more-text more-description open-description" @click="toggleMobile = !toggleMobile">More details<DownSvg :class="{svg_active: toggleMobile}"/></span>
 			</div>
 			<div class="details-highlights flex_block">
 				<h3 class="title-middle-regular">Highlights</h3>
 				<ul class="ul_class">
-					<li>Checking of the signal parameters in channels: 406 MHz, 121.5 MHz, 243 MHz</li>
-					<li>Decoding of all 406 MHz aircraft protocols, including the RLS protocol</li>
+					<li>Operation on frequencies: 406 MHz, 121.5 MHz, 243 MHz</li>
+					<li>Decoding of all 406 MHz aircraft protocols </li>
 					<li>Compatibility with beacons of any manufacturer</li>
-					<li>Meeting the FAA, CAR and EuroCAE ELT inspection requirements</li>
-					<li>User-friendly interface</li>
-					<li>Easy connection to laptop or desktop PC  for uploading test results</li>
-					<li>Saving all test results in the tester’s internal memory</li>
-					<li>Accompanied with intuitive PC application for processing test reports</li>
+					<li>Meeting the requirements  of CAA/EuroCAE and EASA (Europe), FAA Part 91.207 (USA) and CAR 571 Appendix G (Canada)</li>
+					<li>Providing convenience of operation thanks to its compactness</li>
+					<li>Managing of test procedure through a smartphone or PCs</li>
+					<li>Usage of the tester’s Wi-Fi for connecting to the smartphone or PCs; a browser is needed only</li>
+					<li>Storing all test results in the tester’s internal memory</li>
 					<li>Verifying of the beacon ID after installation or reprogramming</li>
 					<li>Measuring of beacon’s parameters with an antenna, or through attenuator connection</li>
 				</ul>
