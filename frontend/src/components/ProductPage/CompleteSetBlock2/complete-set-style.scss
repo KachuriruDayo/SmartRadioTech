@@ -33,6 +33,10 @@ section {
 .grid-item_ {
   &0 {
     grid-area: img1;
+
+    img {
+      width: clamp(12.813rem, 6.267rem + 6.757vw, 14.375rem);
+    }
   }
   &1 {
     grid-area: img2;
