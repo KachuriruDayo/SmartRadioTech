@@ -11,7 +11,7 @@
 		<section>
 			<div class="logo-container">
 				<LogoSvg class="logo" />
-				<span>Exclusive supplier of Aeromarine SRT products</span>
+				<span>Exclusive supplier<br> of Aeromarine SRT products</span>
 			</div>
 
 			<div class="contacts-container">
@@ -94,7 +94,7 @@
 				</div>
 			</div>
 
-			<span>© 2024 Smart Radio Tech</span>
+			<span>© 2025 Smart Radio Tech</span>
     </div>
 
   </footer>

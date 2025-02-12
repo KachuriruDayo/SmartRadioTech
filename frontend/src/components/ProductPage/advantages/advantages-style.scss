@@ -58,11 +58,14 @@ section {
   }
 }
 
-.dropdown_svg_active {
+.dropdown_svg_active, .block_active {
+
+  span {
+    color: #0C92BF;
+  }
 
   svg {
-    fill: #0C92BF;
-    stroke: #0C92BF;
+    color: #0C92BF;
   }
 }
 

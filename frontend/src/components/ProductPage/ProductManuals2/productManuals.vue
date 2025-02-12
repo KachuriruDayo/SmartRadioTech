@@ -47,7 +47,7 @@ import SearchBlank from "@/assets/media_content/SerchBlank.svg"
 							in accordance with requirements of Europe (CAA/EuroCAE),
 							USA (FAA Part 91.207) and Canada (CAR 571 Appendix G).
 						</p>
-						<a class="YT-link" href="#"><YouTubeLogo/> on YouTube</a>
+						<a class="YT-link" href="#"><YouTubeLogo/>Watch on YouTube</a>
 					</div>
 				<div class="product-manuals">
 					<article>

@@ -5,6 +5,11 @@ section {
   padding: 64px clamp(6.313rem, 0.438rem + 7.344vw, 9.25rem);
   gap: 30px;
   border-radius: 10px;
+
+  h2 {
+    font-size: 32px;
+    font-weight: 400;
+  }
 }
 
 .article-container {
@@ -14,18 +19,13 @@ section {
   article {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 30px;
     padding: 40px;
     border-radius: 10px;
     border: 1px solid #DDDDDD;
 
     img {
       border-radius: 10px;
-    }
-
-    h2 {
-      font-size: 32px;
-      font-weight: 400;
     }
 
     p {
@@ -56,9 +56,14 @@ section {
   display: block;
 }
 
-.article-container {
-  max-width: fit-content;
-  max-height: fit-content;
+.article-text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  p {
+    margin-right: 86px;
+  }
 }
 
 @media screen and (max-width: 1280px) {

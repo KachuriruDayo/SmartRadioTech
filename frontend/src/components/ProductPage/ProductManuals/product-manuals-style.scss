@@ -85,36 +85,6 @@ section {
   overflow: hidden;
 }
 
-#toggle {
-  cursor: pointer;
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  top: 40%;
-  left: 90%;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background-color: #fff;
-
-  div {
-    position: relative;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    border: 1px solid #363843;
-
-    svg {
-      transform: rotate(-90deg);
-      transition: transform 0.3s ease-out;
-    }
-  }
-}
-
 #play {
   cursor: pointer;
   position: absolute;
@@ -166,10 +136,7 @@ section {
 }
 
 .video-container{
-  display: grid;
-  grid-template-columns: repeat(2, clamp(30.813rem, 4.313rem + 33.125vw, 44.063rem));
-  grid-template-rows: clamp(17.688rem, 2.563rem + 18.906vw, 25.25rem);
-  gap: 10px;
+  display: flex;
 }
 
 .video-container,
@@ -264,10 +231,6 @@ section {
   #play {
     top: clamp(2.313rem, -0.653rem + 13.182vw, 5.938rem);
     left: clamp(6.438rem, 0.966rem + 24.318vw, 13.125rem);
-  }
-
-  #toggle {
-    display: none;
   }
 
   .dimension-info {

@@ -38,7 +38,9 @@ const navigation = (link) => {
 
     <div class="product-container">
       <article class ="product-article">
-        <img class ="product-img" src="@/assets/media_content/firstPng.png" alt="firstImg"/>
+				<div class="image-container">
+					<img class ="product-img" src="@/assets/media_content/firstPng.png" alt="firstImg"/>
+				</div>
         <div class="product-info-container">
           <div class="product-info">
             <h2>ELT Tester 406 03</h2>

@@ -47,20 +47,20 @@
         <DropdownMenu class="dropdown-menu" :isOpen="isOpen.first" @click="toggle('first')">
           <template #trigger>
 						<button>
-							<NavArrowSvg :class="{ down_arrow_active: isOpen.first }"/>
 							<span>Product</span>
+							<NavArrowSvg :class="{ down_arrow_active: isOpen.first }"/>
 						</button>
           </template>
           <template #body>
-						<RouterLink class="navLink_long" to="/production/elt_tester-406-03"><button><span>Tester 406 03</span></button></RouterLink>
+						<RouterLink class="navLink_long" to="/production/elt_tester-406-03"><button><span>ELT Tester 406 03</span></button></RouterLink>
 						<RouterLink class="navLink_long" to="/production/elt_tester-i406-mini"><button><span>ELT Tester i406 Mini</span></button></RouterLink>
           </template>
         </DropdownMenu>
         <DropdownMenu class="dropdown-menu" :isOpen="isOpen.second" @click="toggle('second')">
           <template #trigger>
 						<button>
-							<NavArrowSvg :class="{ down_arrow_active: isOpen.second }"/>
 							<span>For current users</span>
+							<NavArrowSvg :class="{ down_arrow_active: isOpen.second }"/>
 						</button>
           </template>
           <template #body>

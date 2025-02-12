@@ -55,7 +55,7 @@ onMounted(() => {
 				</div>
 			</article>
 			<div class="tags-section">
-				<span>ELT test equipment you can rely on</span>
+				<span>Suitable for:</span>
 				<div class="tags-container">
 					<div>
 						<span>Aviation safety inspectors</span>

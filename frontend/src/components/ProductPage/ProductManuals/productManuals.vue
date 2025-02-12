@@ -2,28 +2,8 @@
 import YouTubeLogo from "@/assets/media_content/YoutubeLogo.svg"
 import PlaySvg from "@/assets/media_content/PlaySvg.svg"
 import DownloadSvg from "@/assets/media_content/Download.svg"
-import DownSvg from "@/assets/media_content/Down.svg"
 import ManualSvg from "@/assets/media_content/Brochure.svg"
 import BrochureSvg from "@/assets/media_content/ProductBrochure.svg"
-import {ref, useTemplateRef} from "vue";
-
-const artcl = useTemplateRef('vid_1')
-let artWidth
-
-const articleLenght = 1;
-
-let toggle = false;
-let currentArticle = ref(0);
-
-function nextArticle () {
-	artWidth = artcl.value.clientWidth;
-	toggle = !toggle;
-	let actual = currentArticle.value += 1;
-	if (actual > articleLenght) {
-		actual = 0;
-	}
-	currentArticle.value = actual;
-}
 </script>
 
 <template>
@@ -54,17 +34,12 @@ function nextArticle () {
 			<div class="demonstration-content">
 				<div class="demonstration-video">
 					<div class="video-slider">
-						<div class="video-container" :key="currentArticle" :style="{ marginLeft: 25 + -artWidth * currentArticle + 'px' }">
+						<div class="video-container">
 							<div class="video-item-container">
 								<img ref="vid_1" class="slider-item" src="@/assets/media_content/video_1.png"  alt="Product video"/>
 								<div id="play"><div><PlaySvg/></div></div>
 							</div>
-							<div class="video-item-container">
-								<img class="slider-item" src="@/assets/media_content/video_2.png"  alt="Product video"/>
-								<div id="play"><div><PlaySvg/></div></div>
-							</div>
 						</div>
-						<div id="toggle" :class="{button_prev: toggle}" @click="nextArticle()"><div><DownSvg :class="{svg_active: toggle}"/></div></div>
 					</div>
 					<div class="video-description">
 						<h3>Annual test of 406 MHz ELT</h3>
@@ -72,7 +47,7 @@ function nextArticle () {
 							The video shows the procedure of annual testing of ELT in accordance with requirements
 							of Europe (CAA/EuroCAE), USA (FAA Part 91.207) and Canada (CAR 571 Appendix G).
 						</p>
-						<a class="YT-link" href="#"><YouTubeLogo/> on YouTube</a>
+						<a class="YT-link" href="#"><YouTubeLogo/>Watch on YouTube</a>
 					</div>
 				</div>
 				<div class="product-manuals">

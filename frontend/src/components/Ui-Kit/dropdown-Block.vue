@@ -1,18 +1,22 @@
 <script setup>
 import { ref } from 'vue'
 import ArrowSvg from "@/assets/media_content/Down.svg"
-const isOpen = ref(false)
+const props = defineProps({
+	isOpen: false,
+})
 </script>
 
 <template>
-		<div class="dropdown-btn" @click="isOpen = !isOpen">
-				<div class="dropdown-title" :class="{ dropdown_svg_active: isOpen }">
-					<slot name="title-svg"></slot>
-					<slot name="title"></slot>
-					<ArrowSvg class="arrow-icon" :class="{ arrow_icon_active: isOpen }"/>
+		<div class="dropdown-btn">
+				<div class="dropdown-title" :class="{ dropdown_svg_active: props.isOpen }">
+					<div class="text-start">
+						<slot name="title-svg"></slot>
+						<slot name="title"></slot>
+					</div>
+					<ArrowSvg class="arrow-icon" :class="{ arrow_icon_active: props.isOpen }"/>
 				</div>
 			<transition name="fade" appear>
-				<div class="dropdown-text" v-if="isOpen">
+				<div class="dropdown-text" v-if="props.isOpen">
 					<slot name="text"/>
 				</div>
 			</transition>
@@ -48,6 +52,11 @@ const isOpen = ref(false)
 	display: flex;
 	justify-content: space-between;
 	gap: 7px;
+}
+
+.text-start {
+	display: flex;
+	gap: 14px;
 }
 
 .dropdown-text {
