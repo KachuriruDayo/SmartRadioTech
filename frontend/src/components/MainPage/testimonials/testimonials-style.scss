@@ -18,7 +18,7 @@ section {
   gap: 10px;
 
   article {
-    width: clamp(24.375rem, -0.402rem + 21.429vw, 25.313rem);
+    max-width: clamp(18.75rem, 0rem + 20.833vw, 25rem);
     display: flex;
     flex-direction: column;
     justify-content: left;

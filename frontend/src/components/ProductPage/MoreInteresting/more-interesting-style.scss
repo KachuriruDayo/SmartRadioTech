@@ -3,10 +3,12 @@ section {
   flex-direction: column;
   gap: 30px;
   align-items: center;
-  margin: 80px 0;
+  margin: 40px 0 80px;
 }
 
 .title {
+  font-size: 32px;
+  font-weight: 400;
   text-align: center;
 }
 
@@ -58,6 +60,7 @@ section {
   display: flex;
   align-items: center;
   gap: 10px;
+  color: #0C92BF;
 
   div {
     display: flex;

@@ -10,7 +10,7 @@ import BrochureSvg from "@/assets/media_content/ProductBrochure.svg"
 	<section>
 		<div class="dimensions flex_block">
 			<div class="dimension flex_block">
-				<h2>Dimensions & weight</h2>
+				<h2 class="title-style">Dimensions & weight</h2>
 				<div class="dimension-info">
 					<div class="dimension-text">
 						<span>Dimensions: 195 x 101 x 43 mm</span>
@@ -22,7 +22,7 @@ import BrochureSvg from "@/assets/media_content/ProductBrochure.svg"
 				</div>
 			</div>
 			<div class="conditions flex_block">
-				<h2>Operating conditions</h2>
+				<h2 class="title-style">Operating conditions</h2>
 				<p>
 					The tester is designed to operate in
 					the temperature range from 0°C to +45°С, and relative humidity up to 95%
@@ -30,7 +30,7 @@ import BrochureSvg from "@/assets/media_content/ProductBrochure.svg"
 			</div>
 		</div>
 		<div class="demonstration flex_block">
-			<h2>Demonstration</h2>
+			<h2 class="title-style">Demonstration</h2>
 			<div class="demonstration-content">
 				<div class="demonstration-video">
 					<div class="video-slider">
@@ -55,14 +55,14 @@ import BrochureSvg from "@/assets/media_content/ProductBrochure.svg"
 						<BrochureSvg/>
 						<div class="article-description">
 							<span>Product brochure</span>
-							<div><DownloadSvg/>Download</div>
+							<div><DownloadSvg/><a href="#">Download</a></div>
 						</div>
 					</article>
 					<article>
 						<ManualSvg/>
 						<div class="article-description">
 							<span>User manual </span>
-							<div><DownloadSvg/>Download</div>
+							<div><DownloadSvg/><a href="#">Download</a></div>
 						</div>
 					</article>
 				</div>

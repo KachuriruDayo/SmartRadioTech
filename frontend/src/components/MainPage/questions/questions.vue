@@ -1,5 +1,14 @@
 <script setup>
+import {ref} from "vue";
 import DropdownBlock from "@/components/Ui-Kit/dropdown-Block.vue";
+
+let IsOpen = ref({
+	first: false,
+	second: false,
+	third: false,
+	fourth: false,
+	fifth: false,
+})
 </script>
 
 <template>
@@ -9,7 +18,7 @@ import DropdownBlock from "@/components/Ui-Kit/dropdown-Block.vue";
 			<span>If you don't find the answers you're looking for, ask us directly!</span>
 		</div>
 		<div class="dropdown-container">
-			<DropdownBlock class="dropdown-block">
+			<DropdownBlock :is-open="IsOpen.first" @click="IsOpen.first = !IsOpen.first" class="dropdown-block">
 				<template #title-svg>1</template>
 				<template #title><span class="questions-title">How can I get the software for preparing test reports?</span></template>
 				<template #text>
@@ -25,7 +34,7 @@ import DropdownBlock from "@/components/Ui-Kit/dropdown-Block.vue";
 					</p>
 				</template>
 			</DropdownBlock>
-			<DropdownBlock class="dropdown-block">
+			<DropdownBlock :is-open="IsOpen.second" @click="IsOpen.second = !IsOpen.second" class="dropdown-block">
 				<template #title-svg>2</template>
 				<template #title><span class="questions-title">What is the shipping cost?</span></template>
 				<template #text>
@@ -35,11 +44,12 @@ import DropdownBlock from "@/components/Ui-Kit/dropdown-Block.vue";
 					</p>
 				</template>
 			</DropdownBlock>
-			<DropdownBlock class="dropdown-block">
+			<DropdownBlock :is-open="IsOpen.third" @click="IsOpen.third = !IsOpen.third" class="dropdown-block">
 				<template #title-svg>3</template>
 				<template #title><span class="questions-title">Why should I choose your tester?</span></template>
 				<template #text>
-					<span class="text-title">Accuracy of measurements</span>
+					<div class="text-content">
+						<span class="text-title">Accuracy of measurements</span>
 						<p class="text-regular">
 							The test equipment that we develop and manufacture is intended for
 							thorough and trustworthy inspections, and is compatible with all ELT
@@ -49,36 +59,36 @@ import DropdownBlock from "@/components/Ui-Kit/dropdown-Block.vue";
 						</p>
 
 						<span class="text-title">Realiability of operation</span>
-					<p class="text-regular">
-						The testers are tolerant to temperature drop and can operate at high
-						humidity (all their elements are protected for this). Due to the use
-						of special filters (circuits configured in a narrow band), no
-						extraneous interference can affect the testing.
-					</p>
+						<p class="text-regular">
+							The testers are tolerant to temperature drop and can operate at high
+							humidity (all their elements are protected for this). Due to the use
+							of special filters (circuits configured in a narrow band), no
+							extraneous interference can affect the testing.
+						</p>
 
 						<span class="text-title">Quality of production</span>
-					<p class="text-regular">
-						We design our tools for a long service life, that’s why we do not
-						compromise by using cheap components. This approach, which also
-						includes careful manual assembly, allows us to produce devices with
-						a reject rate of only 0.2% and maintain an optimal price-quality
-						ratio for our devices.<br>
-						The supplied testers’ sets include already all components that
-						are necessary for measurements: RF attenuator, RF cables, adapters, etc.
-					</p>
+						<p class="text-regular">
+							We design our tools for a long service life, that’s why we do not
+							compromise by using cheap components. This approach, which also
+							includes careful manual assembly, allows us to produce devices with
+							a reject rate of only 0.2% and maintain an optimal price-quality
+							ratio for our devices.<br>
+							The supplied testers’ sets include already all components that
+							are necessary for measurements: RF attenuator, RF cables, adapters, etc.
+						</p>
 
 						<span class="text-title">Easy making of test reports</span>
-					<p class="text-regular">
-						Along with the testers, we supply specialized software that allows
-						to automate the process of generating test reports. You only
-						need to print them and sign - minimum of routine paperwork!
-						The software is included to the cost of testers and is available
-						for downloading on this website.
-					</p>
-
+						<p class="text-regular">
+							Along with the testers, we supply specialized software that allows
+							to automate the process of generating test reports. You only
+							need to print them and sign - minimum of routine paperwork!
+							The software is included to the cost of testers and is available
+							for downloading on this website.
+						</p>
+					</div>
 				</template>
 			</DropdownBlock>
-			<DropdownBlock class="dropdown-block">
+			<DropdownBlock :is-open="IsOpen.fourth" @click="IsOpen.fourth = !IsOpen.fourth" class="dropdown-block">
 				<template #title-svg>4</template>
 				<template #title><span class="questions-title">Where is your stock and what is the period of shipment?</span></template>
 				<template #text>
@@ -94,7 +104,7 @@ import DropdownBlock from "@/components/Ui-Kit/dropdown-Block.vue";
 					</p>
 				</template>
 			</DropdownBlock>
-			<DropdownBlock class="dropdown-block">
+			<DropdownBlock :is-open="IsOpen.fifth" @click="IsOpen.fifth = !IsOpen.fifth" class="dropdown-block">
 				<template #title-svg>5</template>
 				<template #title><span class="questions-title">Is there any trial period?</span></template>
 				<template #text>

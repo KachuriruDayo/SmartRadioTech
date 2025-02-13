@@ -1,3 +1,8 @@
+.title-style {
+  font-size: 32px;
+  font-weight: 400;
+}
+
 section {
   display: flex;
   justify-content: space-between;
@@ -34,6 +39,8 @@ section {
   gap: 10px;
 
   span {
+    font-size: 16px;
+    font-weight: 600;
     display: block;
     width: fit-content;
     border-radius: 10px;
@@ -157,7 +164,8 @@ section {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-bottom: clamp(0rem, -10rem + 12.5vw, 5rem);
+  color: #0C92BF;
+  margin-bottom: 5px;
 }
 
 .product-manuals {
@@ -186,6 +194,10 @@ section {
     display: flex;
     gap: 10px;
     align-items: center;
+
+    a {
+      color: #0C92BF;
+    }
   }
 }
 
@@ -193,9 +205,13 @@ section {
   .product-manuals {
     flex-direction: column;
   }
+
+  .YT-link {
+    margin-bottom: 0;
+  }
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1278px) {
   section {
      padding: 0 clamp(2.5rem, -8.021rem + 21.042vw, 8.813rem);
      flex-direction: column;

@@ -1,22 +1,15 @@
 <script setup>
-import CloseSvg from '@/assets/media_content/Close.svg'
-import {onMounted, ref} from "vue";
-
-const isOpen = ref(false);
-
-onMounted(() => {
-	window.addEventListener('resize', (e) => {
-		if (window.innerWidth > 1024) isOpen.value = false;
-	})
-});
+const props = defineProps({
+	isOpen: false,
+})
 </script>
 
 <template>
-	<button class="burger-button" @click="isOpen = true" v-if='!isOpen'>
+	<button class="burger-button" v-if='!isOpen'>
 		<slot name='trigger'></slot>
 	</button>
-	<button class="close-button" @click="isOpen = false" v-if='isOpen'>
-		<CloseSvg/>
+	<button class="close-button" v-if='isOpen'>
+		<slot name='close'></slot>
 	</button>
 	<transition name="fade">
 		<div class='dropdownBody' v-if='isOpen'>

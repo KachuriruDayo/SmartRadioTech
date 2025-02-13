@@ -38,14 +38,14 @@ section {
   border-radius: 10px;
   background-image: url("@/assets/media_content/SupportBlockImg.png");
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center bottom;
   background-size: cover;
 }
 
 .overlay-text {
   position: absolute;
-  top: 50%;
-  left: 55%;
+  top: 485px;
+  left: clamp(42.5rem, 5.625rem + 46.094vw, 60.938rem);
 
   svg {
     display: block;
@@ -82,7 +82,7 @@ section {
     padding: 30px 40px;
     border: 1px solid #0C92BF;
     border-radius: 10px;
-    background-color: #F5F8FA;
+    background-color: transparent;
   }
 }
 
@@ -144,6 +144,9 @@ section {
   }
 
   .overlay-text {
+    top: clamp(30.938rem, 43.438rem + -15.625vw, 35.625rem);
+    left: clamp(30.625rem, 11.875rem + 37.5vw, 41.875rem);
+
     svg {
       width: clamp(9.75rem, 4.854rem + 9.792vw, 12.688rem);
     }
@@ -161,7 +164,7 @@ section {
   }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 798px) {
   section {
     height: 1400px;
     gap: clamp(15.375rem, 9.239rem + 27.273vw, 22.875rem);
@@ -186,4 +189,9 @@ section {
     top: 560px;
     left: 430px;
   }
-}
+
+  .overlay-text {
+    top: clamp(43.75rem, 44.886rem + -2.273vw, 44.375rem);
+    left: clamp(10.125rem, -6.648rem + 74.545vw, 30.625rem);
+  }
+  }
