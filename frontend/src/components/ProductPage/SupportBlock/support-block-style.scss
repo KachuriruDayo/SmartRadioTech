@@ -185,13 +185,17 @@ section {
     }
   }
 
+  .overlay {
+    background-position: clamp(-38.125rem, -48.864rem + 47.727vw, -25rem) 100px;
+  }
+
   .overlay-content {
     top: 560px;
     left: 430px;
   }
 
   .overlay-text {
-    top: clamp(43.75rem, 44.886rem + -2.273vw, 44.375rem);
+    top: 800px;
     left: clamp(10.125rem, -6.648rem + 74.545vw, 30.625rem);
   }
-  }
+}

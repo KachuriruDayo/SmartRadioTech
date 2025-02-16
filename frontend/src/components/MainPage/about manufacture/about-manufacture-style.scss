@@ -51,19 +51,23 @@ section {
   background-repeat: no-repeat;
 }
 
+.svg-container {
+  margin-bottom: 30px;
+}
+
 .article-img {
   background-image: url("@/assets/media_content/About_picture2.png");
   display: block;
+}
+
+.content-container {
+  padding: 20px;
 }
 
 .article-text {
   display: flex;
   flex-direction: column;
   gap: 20px;
-
-  p {
-    margin-right: 86px;
-  }
 }
 
 @media screen and (max-width: 1280px) {

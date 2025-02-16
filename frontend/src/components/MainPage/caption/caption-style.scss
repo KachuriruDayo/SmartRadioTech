@@ -34,7 +34,7 @@ section {
   height: 100%;
   position: absolute;
   z-index: -1;
-  animation: img_animation 7s infinite linear;
+  animation: img_animation 7.01s infinite linear;
 }
 
 .content {
@@ -51,7 +51,7 @@ section {
     h2 {
       display: block;
       margin-top: 20px;
-      font-size: 32px;
+      font-size: clamp(1.625rem, 1.318rem + 1.364vw, 2rem);
       font-weight: 400;
     }
   }
@@ -121,13 +121,13 @@ section {
   }
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1278px) {
   .content {
     gap: clamp(1.563rem, -20.759rem + 35.714vw, 7.813rem);
   }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 998px) {
   section {
     display: flex;
     flex-direction: column;
@@ -153,18 +153,26 @@ section {
 
   .overlay-container {
     position: relative;
+    overflow: hidden;
 
     h1 {
       width: clamp(15.625rem, 12.045rem + 15.909vw, 20rem);
       margin: clamp(1.25rem, 0.227rem + 4.545vw, 2.5rem);
-      padding: 0 0 clamp(5.313rem, -1.191rem + 28.906vw, 16.875rem) 0;
+      padding: 0 0 clamp(7.5rem, 2.227rem + 23.438vw, 16.875rem) 0;
       font-size: clamp(1.625rem, 1.318rem + 1.364vw, 2rem);
     }
+  }
+
+  .overlay {
+    width: fit-content;
+    height: 100%;
+    object-fit: fill;
+    object-position: clamp(-10.625rem, -16.602rem + 26.563vw, 0rem) center;
   }
 }
 
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 798px) {
   .buttons-container {
     flex-direction: column;
   }

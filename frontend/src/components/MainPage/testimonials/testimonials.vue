@@ -16,33 +16,46 @@
 	const items = ref([Img1, Img2, Img3, Img4, Img5, Img6, Img7, Img8, Img9, Img10])
 	const firstArt = useTemplateRef('art_1');
 	let articleWidth
-	let articlesLenght= 3;
+	let articlesLenght = 3;
+
+	let inActive = ref({
+		next: false,
+		prev: true,
+	})
 
 	let currentArticle = ref(0);
 
 	function nextArticle () {
 		articleWidth = firstArt.value.clientWidth;
 		let actual = currentArticle.value += 1;
-		if (actual > articlesLenght) {
-			actual = 0;
+		if (actual >= articlesLenght) {
+			currentArticle.value = articlesLenght;
+			inActive.value.next = true;
+		} else {
+			inActive.value.next = false;
+			inActive.value.prev = false;
+			currentArticle.value = actual;
 		}
-		currentArticle.value = actual;
 	}
 
 	function prevArticle () {
 		articleWidth = firstArt.value.clientWidth;
 		let actual = currentArticle.value -= 1;
-		if (actual < 0) {
-			actual = articlesLenght;
+		if (actual <= 0) {
+			currentArticle.value = 0;
+			inActive.value.prev = true;
+		} else {
+			inActive.value.next = false;
+			inActive.value.prev = false;
+			currentArticle.value = actual;
 		}
-		currentArticle.value = actual;
 	}
 
 	onMounted(() => {
 		articleWidth = firstArt.value.clientWidth;
 
 		window.addEventListener('resize', (e) => {
-			if (window.innerWidth > 1850) currentArticle.value = 0;
+			if (window.innerWidth > 1440) currentArticle.value = 0;
 		})
 	})
 </script>
@@ -107,8 +120,12 @@
 		</div>
 
 		<div class="buttons-container">
-			<button @click="prevArticle()"><ArrowDown id="prev"/></button>
-			<button @click="nextArticle()"><ArrowDown id="next"/></button>
+			<div @click="prevArticle()">
+				<button :class="{inActive: inActive.prev}"><ArrowDown id="prev"/></button>
+			</div>
+			<div @click="nextArticle()">
+				<button :class="{inActive: inActive.next}"><ArrowDown id="next"/></button>
+			</div>
 		</div>
 
 		<div class="carusel-container">

@@ -60,7 +60,9 @@ const navigation = (link) => {
         </div>
       </article>
       <article class ="product-article">
-        <img class ="product-img" src="@/assets/media_content/secondPng.png" alt="secondImg"/>
+				<div class="image-container">
+					<img class ="product-img" src="@/assets/media_content/secondPng.png" alt="secondImg"/>
+				</div>
         <div class="product-info-container">
           <div class="product-info">
             <h2>ELT Tester i406 Mini</h2>

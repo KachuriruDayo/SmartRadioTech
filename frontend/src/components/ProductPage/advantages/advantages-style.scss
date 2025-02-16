@@ -19,7 +19,7 @@ section {
   }
 
   h2 {
-    font-size: 32px;
+    font-size: clamp(1.625rem, 1.318rem + 1.364vw, 2rem);
     font-weight: 400;
   }
 

@@ -40,6 +40,10 @@ section {
     img {
       width: clamp(22.813rem, 5.794rem + 17.568vw, 26.875rem);
     }
+
+    span {
+      text-wrap: nowrap;
+    }
   }
   &1 {
     grid-area: img2;
@@ -76,6 +80,10 @@ section {
 
     img {
       height: clamp(8.125rem, -2.348rem + 10.811vw, 10.625rem);
+    }
+
+    span {
+      width: 120px;
     }
   }
   &8 {
@@ -237,17 +245,17 @@ section {
   }
 
   .grid {
-    grid-template: repeat(15, clamp(7.125rem, -2.386rem + 42.273vw, 18.75rem)) / repeat(4, clamp(4.5rem, -0.665rem + 22.955vw, 10.813rem));
+    grid-template: repeat(14, clamp(7.125rem, -2.386rem + 42.273vw, 18.75rem)) / repeat(4, clamp(4.5rem, -0.665rem + 22.955vw, 10.813rem));
     grid-template-areas:
     "img1 img1 img1 img2"
     "img1 img1 img1 img2"
     "img1 img1 img1 img2"
     "img3 img3 img3 img3"
     "img3 img3 img3 img3"
-    "img3 img3 img3 img3"
     "img7 img7 img7 img7"
     "img7 img7 img7 img7"
     "img7 img7 img7 img7"
+    "img4 img4 img8 img8"
     "img4 img4 img8 img8"
     "img4 img4 img8 img8"
     "img5 img5 img6 img6"

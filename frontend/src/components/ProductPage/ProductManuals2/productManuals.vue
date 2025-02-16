@@ -11,7 +11,7 @@ import SearchBlank from "@/assets/media_content/SerchBlank.svg"
 	<section>
 		<div class="dimensions flex_block">
 			<div class="dimension flex_block">
-				<h2>Dimensions & weight</h2>
+				<h2 class="title_style">Dimensions & weight</h2>
 				<div class="dimension-info">
 					<div class="dimension-text">
 						<span>Dimensions: 83 x 54 x 19 mm</span>
@@ -22,7 +22,7 @@ import SearchBlank from "@/assets/media_content/SerchBlank.svg"
 				</div>
 			</div>
 			<div class="conditions flex_block">
-				<h2>Operating conditions</h2>
+				<h2 class="title_style">Operating conditions</h2>
 				<p>
 					The tester is designed to operate in the temperature range
 					from 0°C to +45°С, and relative humidity up to 95%
@@ -30,16 +30,15 @@ import SearchBlank from "@/assets/media_content/SerchBlank.svg"
 			</div>
 		</div>
 		<div class="demonstration flex_block">
-			<h2>Demonstration</h2>
+			<h2 class="title_style">Demonstrations</h2>
 			<div class="demonstration-content">
 				<div class="demonstration-video">
-						<div class="video-container">
+					<div class="video-container">
 							<div class="video-item-container">
 								<img class="slider-item" src="@/assets/media_content/video_2.png"  alt="Product video"/>
 								<div id="play"><div><PlaySvg/></div></div>
 							</div>
 						</div>
-					</div>
 					<div class="video-description">
 						<h3>Annual testing of ELT with ELT Tester i406 Mini </h3>
 						<p>
@@ -49,24 +48,25 @@ import SearchBlank from "@/assets/media_content/SerchBlank.svg"
 						</p>
 						<a class="YT-link" href="#"><YouTubeLogo/>Watch on YouTube</a>
 					</div>
+				</div>
 				<div class="product-manuals">
 					<article>
 						<BrochureSvg/>
 						<div class="article-description">
 							<span>Product brochure</span>
-							<div><DownloadSvg/><span>Download</span></div>
+							<a href="#" class="link-download"><div><DownloadSvg/></div><span>Download</span></a>
 						</div>
 					</article>
 					<article>
 						<ManualSvg/>
 						<div class="article-description">
 							<span>User manual </span>
-							<div><DownloadSvg/><span>Download</span></div>
+							<a href="#" class="link-download"><div><DownloadSvg/></div><span>Download</span></a>
 						</div>
 					</article>
 					<article>
 						<SearchBlank/>
-						<div class="article-description">
+						<div class="article-description test-report">
 							<span>Test report</span>
 							<a href="#">View test report example</a>
 						</div>

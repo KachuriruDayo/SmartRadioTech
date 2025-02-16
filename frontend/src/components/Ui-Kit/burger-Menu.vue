@@ -42,11 +42,11 @@ const props = defineProps({
 	padding: clamp(0rem, -0.511rem + 2.273vw, 0.625rem) clamp(0rem, -1.023rem + 4.545vw, 1.25rem);
 	border: none;
 	background: none;
+	z-index: 3;
 }
 
 .dropdownBody {
 	position: absolute;
-	z-index: 1;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -55,6 +55,7 @@ const props = defineProps({
 	height: 100vh;
 	top: 79px;
 	right: 0;
+	z-index: 3;
 }
 
 .close-button {
@@ -65,6 +66,7 @@ const props = defineProps({
 	justify-content: center;
 	border: none;
 	background: none;
+	z-index: 3;
 }
 
 @media screen and (min-width: 1026px) {

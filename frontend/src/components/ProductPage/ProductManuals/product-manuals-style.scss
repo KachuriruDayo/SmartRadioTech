@@ -17,6 +17,7 @@ section {
 }
 
 .dimensions {
+  justify-content: space-between;
   width: clamp(24.563rem, 1.188rem + 29.219vw, 36.25rem);
 }
 
@@ -85,6 +86,7 @@ section {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  padding: clamp(0rem, 5.625rem + -4.688vw, 1.875rem);
 }
 
 .video-slider {
@@ -95,8 +97,8 @@ section {
 #play {
   cursor: pointer;
   position: absolute;
-  top: 38%;
-  left: 43%;
+  top: 40%;
+  left: 44%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -230,26 +232,23 @@ section {
     gap: 40px;
   }
 
-  .video-container {
-    padding-left: clamp(0rem, -16.875rem + 33.75vw, 10.125rem) !important;
-  }
-
   .product-manuals {
     flex-direction: row;
   }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 798px) {
   section {
     padding: 0 clamp(1.25rem, 0.227rem + 4.545vw, 2.5rem);
   }
 
   #play {
-    top: clamp(2.313rem, -0.653rem + 13.182vw, 5.938rem);
-    left: clamp(6.438rem, 0.966rem + 24.318vw, 13.125rem);
+    top: clamp(2.813rem, -2.557rem + 23.864vw, 9.375rem);
+    left: clamp(6.875rem, -2.841rem + 43.182vw, 18.75rem);
   }
 
   .dimension-info {
+    padding: clamp(1.25rem, 0.227rem + 4.545vw, 2.5rem);
 
     img {
       width: clamp(15.375rem, 12.972rem + 10.682vw, 18.313rem);
@@ -266,6 +265,10 @@ section {
   .video-container{
     grid-template-columns: repeat(2, clamp(17.688rem, 6.949rem + 47.727vw, 30.813rem));
     grid-template-rows: 1fr;
+  }
+
+  .video-description {
+    padding: clamp(0rem, -1.534rem + 6.818vw, 1.875rem);
   }
 }
 

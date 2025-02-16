@@ -20,14 +20,14 @@ section {
 .grid {
   display: grid;
   gap: 10px;
-  grid-template: repeat(6, 100px) / repeat(13, clamp(5.188rem, -0.573rem + 5.946vw, 6.563rem));
+  grid-template: repeat(6, clamp(5.938rem, 4.811rem + 1.163vw, 6.25rem)) / repeat(14, clamp(4.75rem, -0.225rem + 5.135vw, 5.938rem));
   grid-template-areas:
-    "img1 img1 img1 img2 img3 img3 img3 img6 img6 img8 img8 img9 img9"
-    "img1 img1 img1 img2 img3 img3 img3 img6 img6 img8 img8 img9 img9"
-    "img1 img1 img1 img2 img4 img4 img4 img6 img6 img8 img8 img9 img9"
-    "img1 img1 img1 img2 img4 img4 img4 img7 img7 img10 img10 img10 img10"
-    "img1 img1 img1 img2 img5 img5 img5 img7 img7 img10 img10 img10 img10"
-    "img1 img1 img1 img2 img5 img5 img5 img7 img7 img10 img10 img10 img10";
+    "img1 img1 img1 img2 img2 img3 img3 img3 img6 img6 img8 img8 img9 img9"
+    "img1 img1 img1 img2 img2 img3 img3 img3 img6 img6 img8 img8 img9 img9"
+    "img1 img1 img1 img2 img2 img4 img4 img4 img6 img6 img8 img8 img9 img9"
+    "img1 img1 img1 img2 img2 img4 img4 img4 img7 img7 img10 img10 img10 img10"
+    "img1 img1 img1 img2 img2 img5 img5 img5 img7 img7 img10 img10 img10 img10"
+    "img1 img1 img1 img2 img2 img5 img5 img5 img7 img7 img10 img10 img10 img10";
 }
 
 .grid-item_ {
@@ -35,7 +35,7 @@ section {
     grid-area: img1;
 
     img {
-      width: clamp(12.813rem, 6.267rem + 6.757vw, 14.375rem);
+      width: 170px;
     }
   }
   &1 {
@@ -43,7 +43,6 @@ section {
 
     img {
       width: 65px;
-      height: clamp(25rem, 1.436rem + 24.324vw, 30.625rem);
     }
   }
   &2 {
@@ -54,9 +53,17 @@ section {
   }
   &4 {
     grid-area: img5;
+
+    img {
+      width: 139px;
+    }
   }
   &5 {
     grid-area: img6;
+
+    img {
+      width: 81px;
+    }
   }
   &6 {
     grid-area: img7;
@@ -69,6 +76,10 @@ section {
   }
   &9 {
     grid-area: img10;
+
+    img {
+      width: 183px;
+    }
   }
 }
 
@@ -78,40 +89,19 @@ section {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  padding:20px;
+  padding: clamp(1.25rem, -3.256rem + 4.651vw, 2.5rem);
   border-radius: 10px;
   background-color: #ffffff;
   overflow: hidden;
+
+  span {
+    text-align: center;
+  }
 }
 
 .article-img {
   display: block;
   width: 100%;
-}
-
-.option-article {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 30px 0 0 20px;
-}
-
-.option-img {
-  width: 185px;
-  height: 220px;
-  background-image: url("@/assets/media_content/CompleteImg2/Case.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-
-.option {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 10px;
-  border: 1px solid #363843;
-  border-radius: 10px;
 }
 
 @media screen and (max-width: 1550px) {
@@ -121,7 +111,7 @@ section {
   }
 
   .grid {
-    grid-template: repeat(8, clamp(8.75rem, 1.343rem + 9.259vw, 10.313rem)) / repeat(7, clamp(8.438rem, -2.525rem + 13.704vw, 10.75rem));
+    grid-template: repeat(9, 95px) / repeat(7, clamp(8.438rem, -1.933rem + 12.963vw, 10.625rem));
     grid-template-areas:
     "img1 img1 img1 img2 img3 img3 img3"
     "img1 img1 img1 img2 img3 img3 img3"
@@ -130,6 +120,7 @@ section {
     "img1 img1 img1 img2 img5 img5 img5"
     "img1 img1 img1 img2 img5 img5 img5"
     "img6 img7 img7 img8 img9 img10 img10"
+    "img6 img7 img7 img8 img9 img10 img10"
     "img6 img7 img7 img8 img9 img10 img10";
   }
 
@@ -137,13 +128,23 @@ section {
 
     &0 {
       img {
-        width: 345px;
+        width: clamp(10.625rem, -7.153rem + 22.222vw, 14.375rem);
       }
     }
     &1 {
       img {
-        width: 115px;
-        height: 760px;
+        width: 75px;
+        height: clamp(25rem, -4.63rem + 37.037vw, 31.25rem);
+      }
+    }
+    &2 {
+      img {
+        width: 250px;
+      }
+    }
+    &3 {
+      img {
+        width: 265px;
       }
     }
     &6 {
@@ -153,61 +154,48 @@ section {
       }
     }
   }
-
-  .option-img {
-    width: clamp(9.875rem, 1.875rem + 10vw, 11.563rem);
-    height: clamp(11.875rem, 2.986rem + 11.111vw, 13.75rem);
-  }
 }
 
 @media screen and (max-width: 1278px) {
   .grid {
-    grid-template: repeat(8, clamp(6.25rem, 2.083rem + 8.333vw, 8.75rem)) / repeat(7, clamp(5.938rem, 1.771rem + 8.333vw, 8.438rem));
+    grid-template: repeat(9, clamp(5rem, 5.833rem + -1.042vw, 5.313rem)) / repeat(10, clamp(3.938rem, 1.021rem + 5.833vw, 5.688rem));
     grid-template-areas:
-    "img1 img1 img1 img2 img3 img3 img3"
-    "img1 img1 img1 img2 img3 img3 img3"
-    "img1 img1 img1 img2 img4 img4 img4"
-    "img1 img1 img1 img2 img4 img4 img4"
-    "img1 img1 img1 img2 img5 img5 img5"
-    "img1 img1 img1 img2 img5 img5 img5"
-    "img6 img7 img7 img8 img9 img10 img10"
-    "img6 img7 img7 img8 img9 img10 img10";
+    "img1 img1 img1 img1 img2 img2 img3 img3 img3 img3"
+    "img1 img1 img1 img1 img2 img2 img3 img3 img3 img3"
+    "img1 img1 img1 img1 img2 img2 img4 img4 img4 img4"
+    "img1 img1 img1 img1 img2 img2 img4 img4 img4 img4"
+    "img1 img1 img1 img1 img2 img2 img5 img5 img5 img5"
+    "img1 img1 img1 img1 img2 img2 img5 img5 img5 img5"
+    "img6 img6 img7 img7 img8 img8 img9 img9 img10 img10"
+    "img6 img6 img7 img7 img8 img8 img9 img9 img10 img10"
+    "img6 img6 img7 img7 img8 img8 img9 img9 img10 img10";
   }
 
   .grid-item_ {
 
     &0 {
       img {
-        width: clamp(14.063rem, 1.563rem + 25vw, 21.563rem);
+        width: 180px;
       }
     }
     &1 {
       img {
-        width: clamp(4.375rem, 1.25rem + 6.25vw, 6.25rem);
-        height: clamp(28.75rem, -2.5rem + 62.5vw, 47.5rem);
+        width: 75px;
+        height: 360px;
       }
     }
     &6 {
       img {
-        width: clamp(8.438rem, 2.188rem + 12.5vw, 12.188rem);
+        width: clamp(7.5rem, 5.417rem + 4.167vw, 8.75rem);
+        height: clamp(8.438rem, 5.833rem + 5.208vw, 10rem);
       }
     }
-  }
-
-  .option-article {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: clamp(0rem, -3.125rem + 6.25vw, 1.875rem) 0 0 clamp(0rem, -2.083rem + 4.167vw, 1.25rem);
-  }
-
-  .option-img {
-    width: clamp(7.188rem, 3.021rem + 8.333vw, 9.688rem);
-    height: clamp(8.75rem, 3.75rem + 10vw, 11.75rem);
-  }
-
-  .option-title {
-    font-size: clamp(1.25rem, 1.045rem + 0.909vw, 1.5rem);
+    &9 {
+      img {
+        width: clamp(6.875rem, 3.75rem + 6.25vw, 8.75rem);
+        height: clamp(9.063rem, 7.5rem + 3.125vw, 10rem);
+      }
+    }
   }
 }
 
@@ -253,26 +241,22 @@ section {
         height: 460px;
       }
     }
-    &6 {
+    &4 {
       img {
-        width: clamp(9.063rem, 5.994rem + 13.636vw, 12.813rem);
+        width: clamp(16.25rem, 9.091rem + 31.818vw, 25rem);
       }
     }
-  }
-
-  .option-article {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: clamp(0rem, -3.125rem + 6.25vw, 1.875rem) 0 0 clamp(0rem, -2.083rem + 4.167vw, 1.25rem);
-  }
-
-  .option-img {
-    width: clamp(12.813rem, 7.443rem + 23.864vw, 19.375rem);
-    height: clamp(15.313rem, 8.665rem + 29.545vw, 23.438rem);
-  }
-
-  .option-title {
-    font-size: clamp(1.25rem, 1.045rem + 0.909vw, 1.5rem);
+    &6 {
+      img {
+        width: clamp(8.75rem, 1.847rem + 30.682vw, 17.188rem);
+        height: clamp(9.375rem, 1.705rem + 34.091vw, 18.75rem);
+      }
+    }
+    &9 {
+      img {
+        width: clamp(11.563rem, 7.727rem + 17.045vw, 16.25rem);
+        height: clamp(13.125rem, 8.011rem + 22.727vw, 19.375rem);
+      }
+    }
   }
 }

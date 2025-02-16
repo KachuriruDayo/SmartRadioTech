@@ -13,8 +13,8 @@
 			<article>
 				<h2>ELT Tester i406 Mini for checking emergency beacons operating via Cospas-Sarsat system </h2>
 				<div class="checkmark-container">
-					<span><CheckMark/> connected to any mobile device using tester’s Wi-Fi</span>
-					<span><CheckMark/>test results are displayed automatically</span>
+					<div><div class="svg_checkmark"><CheckMark/></div><span>connected to any mobile device using tester’s Wi-Fi</span></div>
+					<div><div class="svg_checkmark"><CheckMark/></div><span>test results are displayed automatically</span></div>
 				</div>
 			</article>
 			<div class="buttons-container">

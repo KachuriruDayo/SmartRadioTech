@@ -24,7 +24,7 @@ section {
   gap: 80px;
   margin: 0 clamp(2.5rem, -2.5rem + 6.25vw, 5rem);
   padding: 64px clamp(6.25rem, -18.125rem + 30.469vw, 18.438rem);
-  border-radius: 10px;
+  border-radius: clamp(0rem, -2.5rem + 11.111vw, 0.625rem);
   background-color: #F4F6F8;
   z-index: 0;
   overflow: hidden;
@@ -34,10 +34,10 @@ section {
   position: absolute;
   inset: 0;
   z-index: 1;
-  border-radius: 10px;
+  border-radius: clamp(0rem, -2.5rem + 11.111vw, 0.625rem);
   background-image: url("@/assets/media_content/Plane_bg_testermini.png");
   background-repeat: no-repeat;
-  background-position: center bottom;
+  background-position: center top;
   background-size: cover;
 }
 
@@ -60,7 +60,6 @@ section {
     padding: 30px 40px;
     border: 1px solid #0C92BF;
     border-radius: 10px;
-    background-color: #F5F8FA;
   }
 }
 
@@ -75,7 +74,7 @@ section {
   flex-direction: column;
   align-items: center;
   gap: 30px;
-  margin-bottom: 600px;
+  margin-bottom: 550px;
 
   h3 {
     width: 500px;
@@ -101,6 +100,7 @@ section {
 @media screen and (max-width: 1278px) {
   .overlay {
     background-size: contain;
+    background-position: bottom;
   }
 
   .title-regular {

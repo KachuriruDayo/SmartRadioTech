@@ -55,8 +55,7 @@ section {
     h2 {
       display: block;
       margin-top: 20px;
-      font-size: 32px;
-      font-weight: 400;
+      font-size: clamp(1.625rem, 1rem + 1.25vw, 2rem);
     }
   }
 }
@@ -66,11 +65,23 @@ section {
   flex-direction: column;
   gap: 10px;
 
-  span {
+  div {
     display: flex;
     align-items: center;
     gap: 10px;
   }
+
+  span {
+    font-size: clamp(0.875rem, 0.667rem + 0.417vw, 1rem);
+  }
+}
+
+.svg_checkmark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 15px;
+  height: 10px;
 }
 
 .buttons-container {
@@ -88,6 +99,7 @@ section {
 
   span {
     color: #fff;
+    font-family: 'Manrope', serif;
     font-size: 16px;
     font-weight: 600;
     white-space: nowrap;
@@ -104,6 +116,7 @@ section {
 
   span {
     color: #363843;
+    font-family: 'Manrope', serif;
     font-size: 16px;
     font-weight: 600;
     white-space: nowrap;
@@ -147,7 +160,8 @@ section {
 
     h1 {
       text-wrap: balance;
-      width: clamp(12.5rem, -1.014rem + 27.027vw, 18.75rem);
+      word-break: auto-phrase;
+      width: clamp(15.625rem, -34.375rem + 100vw, 34.375rem);
       margin: clamp(1.25rem, 0.227rem + 4.545vw, 2.5rem);
       padding: 0 0 clamp(9.375rem, 2.813rem + 29.167vw, 13.75rem) 0;
       font-size: clamp(1.625rem, 1.318rem + 1.364vw, 2rem);

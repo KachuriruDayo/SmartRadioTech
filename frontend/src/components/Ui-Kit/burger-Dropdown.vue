@@ -27,7 +27,7 @@ const isOpen = ref(false)
 
 .fade-enter-to,
 .fade-leave-from {
-	max-height: 75px;
+	max-height: 250px;
 }
 
 .fade-enter-from,

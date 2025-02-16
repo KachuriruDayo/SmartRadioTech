@@ -5,9 +5,11 @@ section {
   margin-bottom: 80px;
 
   h1 {
+    width: clamp(37.5rem, 0rem + 46.875vw, 56.25rem);
     font-size: 32px;
     font-weight: 600;
     color: #0C92BF;
+    text-wrap: balance;
     padding-top: 91px;
     padding-left: clamp(2.5rem, -2.5rem + 6.25vw, 5rem);
   }
@@ -37,7 +39,7 @@ section {
   background-position: center center;
   background-repeat: no-repeat;
   position: absolute;
-  z-index: -2;
+  z-index: -1;
 }
 
 .content {
@@ -52,12 +54,12 @@ section {
     display: flex;
     flex-direction: column;
     gap: 30px;
-    width: 676px;
+    width: clamp(30.25rem, 6.25rem + 30vw, 42.25rem);
 
     h2 {
       display: block;
       margin-top: 20px;
-      font-size: 32px;
+      font-size: clamp(1.625rem, 1.318rem + 1.364vw, 2rem);
       font-weight: 400;
     }
   }
@@ -72,6 +74,7 @@ section {
     display: flex;
     align-items: center;
     gap: 10px;
+    font-size: clamp(0.875rem, 0.773rem + 0.455vw, 1rem);
   }
 }
 
@@ -113,19 +116,20 @@ section {
   }
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1278px) {
   section {
     margin-bottom: 0;
   }
 
   .content {
     padding-bottom: clamp(3.125rem, -6.25rem + 18.75vw, 8.75rem);
-    margin-bottom: clamp(5rem, -1.25rem + 12.5vw, 8.75rem);
+    margin-bottom: 40px;
   }
 
   .product-image {
-    width: clamp(29.938rem, 24.585rem + 13.175vw, 35.125rem);
-    height: clamp(39.063rem, 21.719rem + 42.692vw, 52.938rem);
+    width: clamp(17rem, -13.208rem + 60.417vw, 35.125rem);
+    height: clamp(23.063rem, -26.729rem + 99.583vw, 52.938rem);
+    right: clamp(0rem, 5rem + -6.25vw, 1.875rem);
   }
 }
 
@@ -146,6 +150,7 @@ section {
   }
 
   .overlay-container {
+    height: clamp(18.938rem, -25.229rem + 88.333vw, 45.438rem);
     position: relative;
 
     h1 {
@@ -158,16 +163,35 @@ section {
 
 
 @media screen and (max-width: 798px) {
+  section {
+
+    h1 {
+      width: clamp(18.563rem, 12.375rem + 27.5vw, 26.125rem);
+    }
+  }
+
+  .overlay-container {
+    height: 362px;
+  }
+
   .content {
     padding: 0 clamp(1.25rem, 0.227rem + 4.545vw, 2.5rem) 40px clamp(1.25rem, 0.227rem + 4.545vw, 2.5rem);
   }
 
   .product-image {
-    width: clamp(15.313rem, 3.449rem + 52.727vw, 29.813rem);
-    height: clamp(23.063rem, 11.761rem + 50.227vw, 36.875rem);
+    width: 272px;
+    height: 369px;
+    top: 60px;
+    right: 0;
   }
 
   .buttons-container {
     flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .overlay {
+    background-position: right center;
   }
 }
