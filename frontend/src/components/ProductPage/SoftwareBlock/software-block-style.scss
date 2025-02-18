@@ -61,6 +61,10 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+
+  a {
+    text-decoration: underline #0C92BF;
+  }
 }
 
 .text-container {
@@ -101,6 +105,27 @@ section {
     width: 34px;
     height: 34px;
   }
+}
+
+.test_report-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.close_button {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 10px 0 10px 10px;
+  top: 0;
+  right: 0;
+  background-color: #fff;
 }
 
 @media screen and (max-width: 1280px) {

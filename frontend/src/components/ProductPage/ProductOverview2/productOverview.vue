@@ -1,58 +1,174 @@
 <script setup>
+import {onMounted, ref, useTemplateRef, watch} from "vue";
+import {useModalStore} from "@/stores/modalStore.js";
 import CheckMarkCircule from "@/assets/media_content/CheckMarkCircule.svg"
 import DownSvg from "@/assets/media_content/Down.svg"
-import {ref} from "vue";
+import CloseSvg from "@/assets/media_content/Close.svg";
+import ModalGallery from "@/components/Ui-Kit/modal_gallery.vue";
 
-const articleLenght = 7;
+const modalStore = useModalStore();
+
+const firstArt = useTemplateRef('art_1');
+let articleWidth = ref(0);
+let marginSet	= ref(0);
+
+const articleLength = 7;
+
+let inActive = ref({
+	next: false,
+	prev: true,
+})
 
 let toggle = ref(false);
 let toggleMobile = ref(false);
 let currentArticle = ref(0);
 
 function nextArticle () {
+	articleWidth.value = firstArt.value.clientWidth;
 	let actual = currentArticle.value += 1;
-	if (actual > articleLenght) {
-		actual = 0;
+	if (actual >= articleLength) {
+		currentArticle.value = articleLength;
+		inActive.value.next = true;
+	} else {
+		inActive.value.next = false;
+		inActive.value.prev = false;
+		currentArticle.value = actual;
 	}
-	currentArticle.value = actual;
 }
 
 function prevArticle () {
+	articleWidth.value = firstArt.value.clientWidth;
 	let actual = currentArticle.value -= 1;
-	if (actual < 0) {
-		actual = articleLenght;
+	if (actual <= 0) {
+		currentArticle.value = 0;
+		inActive.value.prev = true;
+	} else {
+		inActive.value.next = false;
+		inActive.value.prev = false;
+		currentArticle.value = actual;
 	}
-	currentArticle.value = actual;
 }
+
+function openImage (index) {
+	if (index <= 0) {
+		currentArticle.value = 0;
+		inActive.value.prev = true;
+	} else {
+		inActive.value.next = false;
+		inActive.value.prev = false;
+		currentArticle.value = index;
+	}
+
+	if (index >= articleLength) {
+		currentArticle.value = articleLength;
+		inActive.value.next = true;
+	} else {
+		inActive.value.next = false;
+		inActive.value.prev = false;
+		currentArticle.value = index;
+	}
+
+	modalStore.toggleModal('gallery', true)
+}
+
+watch(
+	() => modalStore.isOpenModal.modal_gallery,
+	(boolean) => {
+		if (boolean) document.documentElement.style.overflow = 'hidden';
+		else document.documentElement.style.overflow = 'auto';
+	}
+);
+
+onMounted(() => {
+	if (window.innerWidth >= 800) {
+		marginSet.value = 176;
+		articleWidth.value = 476;
+	}
+	if (window.innerWidth >= 1280) {
+		articleWidth.value = 595;
+		marginSet.value = articleWidth.value/2;
+	}
+	if (window.innerWidth >= 1920) {
+		articleWidth.value = 875;
+		marginSet.value = articleWidth.value/2;
+	}
+	window.addEventListener('resize', () => {
+		if (window.innerWidth > 799) {
+			currentArticle.value = 0;
+		}
+		if (window.innerWidth < 800) modalStore.toggleModal('gallery', false);
+	})
+})
 </script>
 
 <template>
 <section>
+
+	<ModalGallery>
+		<template v-slot:close_button>
+			<button class="close_button" @click="modalStore.toggleModal('gallery', false)"><CloseSvg/></button>
+		</template>
+		<template v-slot:content>
+			<div class="gallery-modal">
+				<div class="gallery-list_modal" :style="{ marginLeft: -articleWidth * currentArticle + marginSet + 'px' }">
+					<div ref="art_1" class="image-container_modal">
+						<img class="gallery-item" src="@/assets/media_content/Overview2/ELT_Tester_i406_Mini_foto1.png"  alt="Product image"/>
+					</div>
+					<div class="image-container_modal">
+						<img class="gallery-item" src="@/assets/media_content/Overview2/ELT_Tester_i406_Mini_foto2.png"  alt="Product image"/>
+					</div>
+					<div class="image-container_modal">
+						<img class="gallery-item" src="@/assets/media_content/Overview2/ELT_Tester_i406_Mini_foto3.png"  alt="Product image"/>
+					</div>
+					<div class="image-container_modal">
+						<img class="gallery-item" src="@/assets/media_content/Overview2/ELT_Tester_i406_Mini_foto4.png"  alt="Product image"/>
+					</div>
+					<div class="image-container_modal">
+						<img class="gallery-item" src="@/assets/media_content/Overview2/ELT_Tester_i406_Mini_foto5.png"  alt="Product image"/>
+					</div>
+					<div class="image-container_modal">
+						<img class="gallery-item" src="@/assets/media_content/Overview2/ELT_Tester_i406_Mini_foto6.png"  alt="Product image"/>
+					</div>
+					<div class="image-container_modal">
+						<img class="gallery-item" src="@/assets/media_content/Overview2/ELT_Tester_i406_Mini_foto7.png"  alt="Product image"/>
+					</div>
+					<div class="image-container_modal">
+						<img class="gallery-item" src="@/assets/media_content/Overview2/ELT_Tester_i406_Mini_foto8.png"  alt="Product image"/>
+					</div>
+				</div>
+				<div id="prev_modal" @click="prevArticle()" :class="{inActive: inActive.prev}"><DownSvg/></div>
+				<div id="prev_modal_area" @click="prevArticle()"></div>
+				<div id="next_modal" @click="nextArticle()" :class="{inActive: inActive.next}"><DownSvg/></div>
+				<div id="next_modal_area" @click="nextArticle()"></div>
+			</div>
+		</template>
+	</ModalGallery>
+
 	<h2 class="title-big-regular">Product overview</h2>
 	<div class="content">
 		<div class="gallery">
-			<div class="image-container">
+			<div class="image-container" @click="openImage(0)">
 				<img class="gallery-item" src="@/assets/media_content/Overview2/ELT_Tester_i406_Mini_foto1.png"  alt="Product image"/>
 			</div>
-			<div class="image-container">
+			<div class="image-container" @click="openImage(1)">
 				<img class="gallery-item" src="@/assets/media_content/Overview2/ELT_Tester_i406_Mini_foto2.png"  alt="Product image"/>
 			</div>
-			<div class="image-container">
+			<div class="image-container" @click="openImage(2)">
 				<img class="gallery-item" src="@/assets/media_content/Overview2/ELT_Tester_i406_Mini_foto3.png"  alt="Product image"/>
 			</div>
-			<div class="image-container">
+			<div class="image-container" @click="openImage(3)">
 				<img class="gallery-item" src="@/assets/media_content/Overview2/ELT_Tester_i406_Mini_foto4.png"  alt="Product image"/>
 			</div>
-			<div class="image-container">
+			<div class="image-container" @click="openImage(4)">
 				<img class="gallery-item" src="@/assets/media_content/Overview2/ELT_Tester_i406_Mini_foto5.png"  alt="Product image"/>
 			</div>
-			<div class="image-container">
+			<div class="image-container" @click="openImage(5)">
 				<img class="gallery-item" src="@/assets/media_content/Overview2/ELT_Tester_i406_Mini_foto6.png"  alt="Product image"/>
 			</div>
-			<div class="image-container">
+			<div class="image-container" @click="openImage(6)">
 				<img class="gallery-item" src="@/assets/media_content/Overview2/ELT_Tester_i406_Mini_foto7.png"  alt="Product image"/>
 			</div>
-			<div class="image-container">
+			<div class="image-container" @click="openImage(7)">
 				<img class="gallery-item" src="@/assets/media_content/Overview2/ELT_Tester_i406_Mini_foto8.png"  alt="Product image"/>
 			</div>
 		</div>
@@ -83,8 +199,8 @@ function prevArticle () {
 					<img class="gallery-item" src="@/assets/media_content/Overview2/ELT_Tester_i406_Mini_foto8.png"  alt="Product image"/>
 				</div>
 			</div>
-			<div id="prev" @click="prevArticle()"></div>
-			<div id="next" @click="nextArticle()"></div>
+			<div id="prev" @click="prevArticle()" :class="{inActive_mobile: inActive.prev}"></div>
+			<div id="next" @click="nextArticle()" :class="{inActive_mobile: inActive.next}"></div>
 		</div>
 		<div class="details">
 			<div class="details-solution flex_block">

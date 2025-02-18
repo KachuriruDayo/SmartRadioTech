@@ -292,7 +292,7 @@ section {
 
   .grid-item_3 {
     img {
-      width: 100%;
+      width: clamp(4.688rem, -3.239rem + 35.227vw, 14.375rem);
     }
   }
 

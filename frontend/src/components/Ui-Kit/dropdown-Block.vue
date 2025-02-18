@@ -1,5 +1,4 @@
 <script setup>
-import { ref } from 'vue'
 import ArrowSvg from "@/assets/media_content/Down.svg"
 const props = defineProps({
 	isOpen: false,

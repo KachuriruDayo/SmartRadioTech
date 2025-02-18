@@ -1,5 +1,5 @@
 <script setup>
-import {onMounted, ref, useTemplateRef, watch} from "vue";
+import {onMounted, ref, watch} from "vue";
 	import {useRouter} from "vue-router";
   import DropdownMenu from '@/components/Ui-Kit/dropdown-Menu.vue'
   import BurgerMenu from "@/components/Ui-Kit/burger-Menu.vue";
@@ -43,7 +43,7 @@ import {onMounted, ref, useTemplateRef, watch} from "vue";
  	);
 
  	onMounted(() => {
-	 	window.addEventListener('resize', (e) => {
+	 	window.addEventListener('resize', () => {
 		 	if (window.innerWidth > 1024) isOpen.value.burger = false;
 	 	})
  	});

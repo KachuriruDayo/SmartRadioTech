@@ -34,7 +34,9 @@ section {
   height: 100%;
   position: absolute;
   z-index: -1;
-  animation: img_animation 7.01s infinite linear;
+  object-fit: cover;
+  animation: img_animation 7s infinite linear;
+  -webkit-appearance: none;
 }
 
 .content {
@@ -83,7 +85,7 @@ section {
   height: 54px;
   padding: 15px 40px;
   background-color: transparent;
-  border-width: 1px;
+  border: 1px solid #363843;
   border-radius: 6px;
 
   span {
@@ -164,9 +166,8 @@ section {
   }
 
   .overlay {
-    width: fit-content;
+    width: 100%;
     height: 100%;
-    object-fit: fill;
     object-position: clamp(-10.625rem, -16.602rem + 26.563vw, 0rem) center;
   }
 }

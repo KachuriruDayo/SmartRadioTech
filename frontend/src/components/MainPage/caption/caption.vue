@@ -36,7 +36,7 @@ const nextImage = async () => {
 onMounted(() => {
 	setInterval(() => {
 		nextImage()
-	}, 7000);
+	}, 7025);
 })
 </script>
 

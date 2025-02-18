@@ -27,7 +27,7 @@
 					<div class="form-content">
 						<form class="form">
 							<input type="email" placeholder="your@mail.com"/>
-							<button type="submit"><span>Submit</span></button>
+							<button type="button"><span>Submit</span></button>
 						</form>
 						<span>Your email is safe with us. Check out our <a href="#">privacy policy</a>.</span>
 					</div>

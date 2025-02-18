@@ -54,7 +54,7 @@
 	onMounted(() => {
 		articleWidth = firstArt.value.clientWidth;
 
-		window.addEventListener('resize', (e) => {
+		window.addEventListener('resize', () => {
 			if (window.innerWidth > 1440) currentArticle.value = 0;
 		})
 	})

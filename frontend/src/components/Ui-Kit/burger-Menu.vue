@@ -5,14 +5,14 @@ const props = defineProps({
 </script>
 
 <template>
-	<button class="burger-button" v-if='!isOpen'>
+	<button class="burger-button" v-if='!props.isOpen'>
 		<slot name='trigger'></slot>
 	</button>
-	<button class="close-button" v-if='isOpen'>
+	<button class="close-button" v-if='props.isOpen'>
 		<slot name='close'></slot>
 	</button>
 	<transition name="fade">
-		<div class='dropdownBody' v-if='isOpen'>
+		<div class='dropdownBody' v-if='props.isOpen'>
 			<slot name='body'></slot>
 		</div>
 	</transition>
@@ -75,6 +75,13 @@ const props = defineProps({
 	.close-button {
 		display: none;
 		visibility: hidden;
+	}
+}
+
+
+@media screen and (max-width: 550px) {
+	.dropdownBody {
+		width: 100%;
 	}
 }
 

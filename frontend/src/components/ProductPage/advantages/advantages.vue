@@ -16,12 +16,6 @@ let IsOpen = ref({
 	fourth: false,
 	fifth: false,
 })
-
-import TabSvg1 from "@/assets/media_content/Vector (Stroke).svg"
-import TabSvg2 from "@/assets/media_content/Feature2.svg"
-import TabSvg3 from "@/assets/media_content/Feature3.svg"
-import TabSvg4 from "@/assets/media_content/Feature4.svg"
-
 </script>
 
 <template>

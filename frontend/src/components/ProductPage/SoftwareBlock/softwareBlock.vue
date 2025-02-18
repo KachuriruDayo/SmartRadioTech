@@ -1,8 +1,21 @@
 <script setup>
-import DownloadSvg from "@/assets/media_content/Download.svg";
-import SerchBlankSvg from "@/assets/media_content/SerchBlank.svg";
-import CheckMarkCircule from "@/assets/media_content/CheckMarkCircule.svg";
+	import DownloadSvg from "@/assets/media_content/Download.svg";
+	import SerchBlankSvg from "@/assets/media_content/SerchBlank.svg";
+	import CheckMarkCircule from "@/assets/media_content/CheckMarkCircule.svg";
+	import CloseSvg from "@/assets/media_content/Close.svg"
+	import { useModalStore } from '@/stores/modalStore.js'
+	import ModalType1 from "@/components/Ui-Kit/modal_type-1.vue";
+	import {watch} from "vue";
 
+	const modalStore = useModalStore();
+
+	watch(
+		() => modalStore.isOpenModal.modal_1,
+		(boolean) => {
+			if (boolean) document.documentElement.style.overflow = 'hidden';
+			else document.documentElement.style.overflow = 'auto';
+		}
+	);
 </script>
 
 <template>
@@ -18,7 +31,7 @@ import CheckMarkCircule from "@/assets/media_content/CheckMarkCircule.svg";
 				</div>
 				<div class="article-text-container">
 					<span class="bold-text-medium">Test report</span>
-					<a class="bold-text-small" href="#">View test report example</a>
+					<a @click="modalStore.toggleModal('type_1', true)" class="bold-text-small">View test report example</a>
 				</div>
 			</article>
 			<div class="text-container">
@@ -39,6 +52,16 @@ import CheckMarkCircule from "@/assets/media_content/CheckMarkCircule.svg";
 				</div>
 			</div>
 		</div>
+
+		<ModalType1>
+			<template v-slot:close_button>
+				<button @click="modalStore.toggleModal('type_1', false)" class="close_button"><CloseSvg/></button>
+			</template>
+			<template v-slot:content>
+					<img class="test_report-img" src="@/assets/media_content/TestReport.png" alt="Test report image">
+			</template>
+		</ModalType1>
+
 	</section>
 </template>
 
