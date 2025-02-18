@@ -42,6 +42,7 @@
 	top: 0;
 	left: 0;
 	z-index: 9;
+	padding: 60px 0;
 }
 
 .overlay {
@@ -51,6 +52,7 @@
 }
 
 .modal_content {
+	display: flex;
 	height: fit-content;
 	z-index: 10;
 }

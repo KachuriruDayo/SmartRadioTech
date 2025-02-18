@@ -225,8 +225,8 @@ section {
 .gallery-list_modal {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(8, clamp(37.188rem, 2.188rem + 43.75vw, 54.688rem));
-  grid-template-rows: clamp(37.188rem, 2.188rem + 43.75vw, 54.688rem);
+  grid-template-columns: repeat(8, clamp(37.188rem, 18.438rem + 23.438vw, 46.563rem));
+  grid-template-rows: clamp(37.188rem, 18.438rem + 23.438vw, 46.563rem);
   gap: 10px;
 }
 

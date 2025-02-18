@@ -88,7 +88,7 @@ onMounted(() => {
 		marginSet.value = articleWidth.value/2;
 	}
 	if (window.innerWidth >= 1920) {
-		articleWidth.value = 875;
+		articleWidth.value = 745;
 		marginSet.value = articleWidth.value/2;
 	}
 	window.addEventListener('resize', () => {
