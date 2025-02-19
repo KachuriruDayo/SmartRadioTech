@@ -1,13 +1,50 @@
 <script setup>
+import { useTemplateRef, watch} from "vue";
+	import {useModalStore} from "@/stores/modalStore.js";
 	import LogoSvg from "@/assets/media_content/Logo.svg"
 	import MegaphoneSvg from "@/assets/media_content/Subscribe.svg"
 	import LinkedInSvg from "@/assets/media_content/LinkedIn.svg"
 	import PhoneSvg from "@/assets/media_content/Phone.svg"
 	import LocationSvg from "@/assets/media_content/Location.svg"
+	import MailSvg from "@/assets/media_content/Newslatter.svg"
+	import Modal from "@/components/Ui-Kit/modal_type_2.vue";
+
+	const modalStore = useModalStore();
+	const input = useTemplateRef('email_input')
+
+	const submitHandler = () => {
+
+		setTimeout( () => {
+			modalStore.toggleModal('type_2', true);
+			console.log(input.value.value);
+			input.value.value = "";
+		}, 1000);
+	}
+
+	watch(
+		() => modalStore.isOpenModal.modal_2,
+		(boolean) => {
+			if (boolean) document.documentElement.style.overflow = 'hidden';
+			else document.documentElement.style.overflow = 'auto';
+		}
+	);
 </script>
 
 <template>
   <footer>
+
+		<Modal>
+			<template v-slot:content>
+				<div class="modal-content">
+					<div class="modal_svg-container"><MailSvg/></div>
+					<div class="modal_text-container">
+						<h4>It’s great you joined us!</h4>
+						<span>See you in the next newsletter!</span>
+					</div>
+				</div>
+			</template>
+		</Modal>
+
 		<section>
 			<div class="logo-container">
 				<LogoSvg class="logo" />
@@ -26,8 +63,8 @@
 
 					<div class="form-content">
 						<form class="form">
-							<input type="email" placeholder="your@mail.com"/>
-							<button type="button"><span>Submit</span></button>
+							<input ref="email_input" type="email" placeholder="your@mail.com"/>
+							<button @click="submitHandler" type="button"><span>Submit</span></button>
 						</form>
 						<span>Your email is safe with us. Check out our <a href="#">privacy policy</a>.</span>
 					</div>

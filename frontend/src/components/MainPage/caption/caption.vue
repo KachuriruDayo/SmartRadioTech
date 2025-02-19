@@ -1,43 +1,5 @@
 <script setup>
-import StartImg from "@/assets/media_content/start-overlay.png"
-import SecondImg from "@/assets/media_content/beacon_tester_in_case_bg.png"
-import LastImg from "@/assets/media_content/beacon_tester_mini_in_case_bg.png"
 
-import {nextTick, onMounted, ref} from "vue";
-
-// const images = [
-// 	{
-// 		image: StartImg,
-// 		index: 0
-// 	},
-// 	{
-// 		image: SecondImg,
-// 		index: 1
-// 	},
-// 	{
-// 		image: LastImg,
-// 		index: 2
-// 	}
-// ]
-// let activeImage = 0
-//
-// let currentImage = ref(images[activeImage].image)
-//
-// const nextImage = async () => {
-// 	let active = activeImage + 1;
-// 	if (active >= images.length) {
-// 		active = 0;
-// 	}
-// 	activeImage = active;
-// 	currentImage.value = images[activeImage].image;
-// 	await nextTick()
-// }
-
-// onMounted(() => {
-// 	setInterval(() => {
-// 		nextImage()
-// 	}, 7025);
-// })
 </script>
 
 <template>
