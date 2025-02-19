@@ -9,15 +9,19 @@
 
 h1,
 h2,
+h3,
+h4,
 p,
 span,
 a {
+  font-weight: $--regular;
+  font-family: 'Manrope', serif;
   color: $--text-color;
 }
 
 #app {
-  font-family: 'Manrope', serif;
   font-weight: $--regular;
+  font-family: 'Manrope', serif;
   width: 100%;
   min-width: 360px;
 }

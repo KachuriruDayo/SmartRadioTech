@@ -1,5 +1,5 @@
 section {
-  height: 840px;
+  height: clamp(52.5rem, 76.607rem + -20.089vw, 66.563rem);
   display: flex;
   justify-content: space-between;
   margin: 0 clamp(2.5rem, -2.5rem + 6.25vw, 5rem);
@@ -10,6 +10,7 @@ section {
   background-image: url("@/assets/media_content/Advantages_bg.png");
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
 }
 
 .text-container {
@@ -52,48 +53,71 @@ section {
   }
 }
 
-.dropdown-btn {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
+.dropdown-item-container {
+  position: relative;
   border-radius: 10px;
-  background-color: white;
+  overflow: hidden;
 }
 
-.dropdown-content {
-  display: flex;
-  gap: 10px;
+.timer-line {
+  display: none;
+  visibility: hidden;
+  width: 183px;
+  height: 2px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  border-radius: 10px;
+  background: linear-gradient(to right, transparent 35%, #0C92BF 60%);
 }
 
-.dropdown-text {
-  max-width: 740px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.arrow_icon_active {
-  rotate: 180deg;
-}
-
-.dropdown_svg_active {
-
-  svg {
-    fill: #0C92BF;
-    stroke: #0C92BF;
+@keyframes marquee {
+  0% {
+    left: -25%;
+  }
+  100% {
+    left: 90%;
   }
 }
 
-.dropdown_text_active {
+.animate {
+  animation: marquee 15s linear infinite;
+}
+
+.dropdown-block {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+
+  span {
+    cursor: pointer;
+  }
+}
+
+.dropdown_svg_active, .block_active {
 
   span {
     color: #0C92BF;
   }
+
+  svg {
+    color: #0C92BF;
+  }
+}
+
+.timer_active {
+  display: block;
+  visibility: visible;
 }
 
 @media screen and (max-width: 1280px) {
   section {
     padding: clamp(2.5rem, 0rem + 5vw, 4rem) clamp(3.75rem, -0.417rem + 8.333vw, 6.25rem);
+  }
+
+  .timer-line {
+    width: 135px;
   }
 }
 
@@ -107,20 +131,28 @@ section {
   .dropdown-container {
     width: 100%;
   }
-
-  .arrow-icon {
-    width: 35px;
-  }
 }
 
 @media screen and (max-width: 800px) {
   section {
-    height: clamp(62.5rem, 70.682rem + -36.364vw, 52.5rem);
     margin: 0 clamp(0rem, -2.045rem + 9.091vw, 2.5rem);
     padding: 40px clamp(1.25rem, 0.227rem + 4.545vw, 2.5rem);
   }
 
-  .dropdown-text {
-    width: 100%;
+  .dropdown-container {
+
+    span {
+      max-width: clamp(13.25rem, 1.08rem + 54.091vw, 28.125rem);
+    }
+  }
+
+  .timer-line {
+    width: 130px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .timer-line {
+    width: 80px;
   }
 }

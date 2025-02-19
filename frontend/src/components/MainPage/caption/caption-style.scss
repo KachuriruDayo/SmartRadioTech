@@ -1,7 +1,49 @@
 @import "@/assets/scss/variables";
 
+@keyframes img_animation {
+  0% {
+    background-image: url('@/assets/media_content/start-overlay.png');
+    opacity: 0;
+  }
+  2%, 31% {
+    opacity: 1;
+  }
+  33% {
+    opacity: 0;
+    scale: 1.1;
+    background-image: url('@/assets/media_content/start-overlay.png');
+  }
+  33.3% {
+    opacity: 0;
+    scale: 1;
+    background-image: url('@/assets/media_content/beacon_tester_in_case_bg.png');
+  }
+  35%, 64% {
+    opacity: 1;
+  }
+  66% {
+    opacity: 0;
+    scale: 1.1;
+    background-image: url('@/assets/media_content/beacon_tester_in_case_bg.png');
+  }
+  66.6% {
+    opacity: 0;
+    scale: 1;
+    background-image: url('@/assets/media_content/beacon_tester_mini_in_case_bg.png');
+  }
+  68%, 99% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    scale: 1.1;
+    background-image: url('@/assets/media_content/beacon_tester_mini_in_case_bg.png');
+  }
+}
+
 section {
   position: relative;
+  overflow: hidden;
 
   h1 {
     font-size: 32px;
@@ -17,6 +59,10 @@ section {
   height: 100%;
   position: absolute;
   z-index: -1;
+  background-size: cover;
+  background-position: center;
+  animation: img_animation 30s infinite linear;
+  -webkit-appearance: none;
 }
 
 .content {
@@ -33,7 +79,7 @@ section {
     h2 {
       display: block;
       margin-top: 20px;
-      font-size: 32px;
+      font-size: clamp(1.625rem, 1.318rem + 1.364vw, 2rem);
       font-weight: 400;
     }
   }
@@ -65,7 +111,7 @@ section {
   height: 54px;
   padding: 15px 40px;
   background-color: transparent;
-  border-width: 1px;
+  border: 1px solid #363843;
   border-radius: 6px;
 
   span {
@@ -103,14 +149,19 @@ section {
   }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1278px) {
+  .content {
+    gap: clamp(1.563rem, -20.759rem + 35.714vw, 7.813rem);
+  }
+}
+
+@media screen and (max-width: 998px) {
   section {
     display: flex;
     flex-direction: column;
   }
 
   .content {
-    gap: clamp(2.5rem, -8.542rem + 22.083vw, 9.125rem);
 
     article {
       width: 100%;
@@ -130,18 +181,25 @@ section {
 
   .overlay-container {
     position: relative;
+    overflow: hidden;
 
     h1 {
       width: clamp(15.625rem, 12.045rem + 15.909vw, 20rem);
       margin: clamp(1.25rem, 0.227rem + 4.545vw, 2.5rem);
-      padding: 0 0 clamp(7.75rem, 4.375rem + 15vw, 11.875rem) 0;
+      padding: 0 0 clamp(7.5rem, 2.227rem + 23.438vw, 16.875rem) 0;
       font-size: clamp(1.625rem, 1.318rem + 1.364vw, 2rem);
     }
+  }
+
+  .overlay {
+    width: 100%;
+    height: 100%;
+    background-position: clamp(-10.625rem, -16.602rem + 26.563vw, 0rem) center;
   }
 }
 
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 798px) {
   .buttons-container {
     flex-direction: column;
   }

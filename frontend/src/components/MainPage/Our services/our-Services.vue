@@ -5,8 +5,8 @@
 <template>
 	<section>
 		<div class="text-container">
-			<h2>Why do customers prefer this equipment?</h2>
-			<span>The key advantages of the testers that make them the right choice</span>
+			<h2>Our services</h2>
+			<span>Assistance that we provide to our customers if they face any issues with their tools</span>
 		</div>
 		<div class="article-container">
 			<article>
@@ -17,7 +17,7 @@
 					or faced some tester’s misoperation, you are welcome
 					to contact our specialists directly.
 					</span>
-					<button><span>See warranty terms </span></button>
+					<button><span>Get to Help Desk</span></button>
 				</div>
 			</article>
 			<article>
@@ -27,7 +27,7 @@
 						All testers are covered with a standard 2-year warranty against manufacturing
 						and firmware defects. Also, an extended 5-year warranty  can be optionally ordered.
 					</span>
-					<button><span>Get to Help Desk </span></button>
+					<button><span>See warranty terms</span></button>
 				</div>
 			</article>
 		</div>

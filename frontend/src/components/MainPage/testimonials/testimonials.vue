@@ -1,18 +1,71 @@
 <script setup>
 	import ArrowDown from "@/assets/media_content/Down.svg"
 	import LineSvg from "@/assets/media_content/Line.svg"
-	import LegacySvg from "@/assets/media_content/logo_legacy.svg"
-	import PhenixSvg from "@/assets/media_content/logo_phenix.svg"
-	import PrimeSvg from "@/assets/media_content/logo_prime.svg"
-	import HarbourSvg from "@/assets/media_content/logo_harbour.svg"
+	import Img1 from "@/assets/media_content/testimonialLogos/image 284.png"
+	import Img2 from "@/assets/media_content/testimonialLogos/image 285.png"
+	import Img3 from "@/assets/media_content/testimonialLogos/image 286.png"
+	import Img4 from "@/assets/media_content/testimonialLogos/image 287.png"
+	import Img5 from "@/assets/media_content/testimonialLogos/image 288.png"
+	import Img6 from "@/assets/media_content/testimonialLogos/image 294.png"
+	import Img7 from "@/assets/media_content/testimonialLogos/image 289.png"
+	import Img8 from "@/assets/media_content/testimonialLogos/Mask_group.png"
+	import Img9 from "@/assets/media_content/testimonialLogos/image293.png"
+	import Img10 from "@/assets/media_content/testimonialLogos/image292.png"
+	import {ref, useTemplateRef, onMounted} from "vue";
+
+	const items = ref([Img1, Img2, Img3, Img4, Img5, Img6, Img7, Img8, Img9, Img10])
+	const firstArt = useTemplateRef('art_1');
+	let articleWidth
+	let articlesLenght = 3;
+
+	let inActive = ref({
+		next: false,
+		prev: true,
+	})
+
+	let currentArticle = ref(0);
+
+	function nextArticle () {
+		articleWidth = firstArt.value.clientWidth;
+		let actual = currentArticle.value += 1;
+		if (actual >= articlesLenght) {
+			currentArticle.value = articlesLenght;
+			inActive.value.next = true;
+		} else {
+			inActive.value.next = false;
+			inActive.value.prev = false;
+			currentArticle.value = actual;
+		}
+	}
+
+	function prevArticle () {
+		articleWidth = firstArt.value.clientWidth;
+		let actual = currentArticle.value -= 1;
+		if (actual <= 0) {
+			currentArticle.value = 0;
+			inActive.value.prev = true;
+		} else {
+			inActive.value.next = false;
+			inActive.value.prev = false;
+			currentArticle.value = actual;
+		}
+	}
+
+	onMounted(() => {
+		articleWidth = firstArt.value.clientWidth;
+
+		window.addEventListener('resize', () => {
+			if (window.innerWidth > 1440) currentArticle.value = 0;
+		})
+	})
 </script>
 
 <template>
 	<section>
 		<h2>Client testimonials and professional trust</h2>
-		<div class="testimonials-container">
-			<article>
-				<LegacySvg/>
+		<div :key="currentArticle" :style="{ marginLeft: -articleWidth * currentArticle + 'px' }" class="testimonials-container">
+			<article ref="art_1">
+				<img id="legacy" src="@/assets/media_content/logo_legacy.png" alt="legacy"/>
 				<div class="testimonial-text">
 					<p>”Hello, I bought my ELT tester mini equipment. First, the
 						customer service was excellent. Second, it was easy to buy.
@@ -23,18 +76,6 @@
 						of good quality.”</p>
 					<LineSvg/>
 					<span>— Alfonso Carrillo Legacy Avionics Service</span>
-				</div>
-			</article>
-			<article>
-				<PhenixSvg/>
-				<div class="testimonial-text">
-					<p>
-						”We chose the ELT 406 03 testers for their reliability and ease of
-						use. This equipment helps us maintain a high level of
-						safety at all stages of flight.”
-					</p>
-					<LineSvg/>
-					<span>— Sergey Petrov, CEO at Helicopter Systems</span>
 				</div>
 			</article>
 			<article>
@@ -49,19 +90,7 @@
 				</div>
 			</article>
 			<article>
-				<PrimeSvg/>
-				<div class="testimonial-text">
-					<p>
-						”We have truly enjoyed your products. Thank
-						you for your service and produce. I tell
-						everyone in South Africa about your ELT testers.”
-					</p>
-					<LineSvg/>
-					<span>— Andrea Vizzini, Director of Prime Avionics</span>
-				</div>
-			</article>
-			<article>
-				<HarbourSvg/>
+				<img id="harbour" src="@/assets/media_content/logo_harbour.png" alt="harbour"/>
 				<div class="testimonial-text">
 					<p>
 						”We found ELT Tester Mini to be a an interesting solution for
@@ -76,11 +105,60 @@
 					<span>— Harbour Air</span>
 				</div>
 			</article>
+			<article>
+				<img id="prime" src="@/assets/media_content/logo_prime.png" alt="prime"/>
+				<div class="testimonial-text">
+					<p>
+						”We have truly enjoyed your products. Thank
+						you for your service and produce. I tell
+						everyone in South Africa about your ELT testers.”
+					</p>
+					<LineSvg/>
+					<span>— Andrea Vizzini, Director of Prime Avionics</span>
+				</div>
+			</article>
 		</div>
 
 		<div class="buttons-container">
-			<button><ArrowDown id="left"/></button>
-			<button><ArrowDown id="right"/></button>
+			<div @click="prevArticle()">
+				<button :class="{inActive: inActive.prev}"><ArrowDown id="prev"/></button>
+			</div>
+			<div @click="nextArticle()">
+				<button :class="{inActive: inActive.next}"><ArrowDown id="next"/></button>
+			</div>
+		</div>
+
+		<div class="carusel-container">
+			<div  class="articles-container animate">
+				<div class="carusel">
+					<template v-for="item in items">
+						<article>
+							<img :src="item" alt="company logo">
+						</article>
+					</template>
+				</div>
+				<div class="carusel">
+					<template v-for="item in items">
+						<article>
+							<img :src="item" alt="company logo">
+						</article>
+					</template>
+				</div>
+				<div class="carusel">
+					<template v-for="item in items">
+						<article>
+							<img :src="item" alt="company logo">
+						</article>
+					</template>
+				</div>
+				<div class="carusel">
+					<template v-for="item in items">
+						<article>
+							<img :src="item" alt="company logo">
+						</article>
+					</template>
+				</div>
+			</div>
 		</div>
 	</section>
 </template>

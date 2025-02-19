@@ -41,7 +41,7 @@ section {
     gap: 20px;
     padding: clamp(1.875rem, 0.625rem + 1.563vw, 2.5rem);
     border-radius: 10px;
-    background-color: #EBF4FD;
+    background: linear-gradient(197deg, #EBF4FD 17.48%, #F4F7FA 91.11%);
 
     h2 {
       font-size: 24px;
@@ -56,7 +56,7 @@ section {
         width: 187px;
         height: 54px;
         background-color: transparent;
-        border-width: 1px;
+        border: 1px solid #363843;
         border-radius: 6px;
 
         span {
@@ -95,7 +95,7 @@ section {
   }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 798px) {
   section {
     margin: 0 clamp(0rem, -2.045rem + 9.091vw, 2.5rem);
     padding: 0 clamp(1.25rem, 0.227rem + 4.545vw, 2.5rem);

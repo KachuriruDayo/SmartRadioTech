@@ -1,10 +1,11 @@
 <script setup>
+
 </script>
 
 <template>
 	<section>
 		<div class="overlay-container">
-			<img class="overlay" src="@/assets/media_content/start-overlay.png" alt="overlay">
+			<div class="overlay"/>
 			<h1>ELT test equipment you can rely on</h1>
 		</div>
 		<div class="content">
@@ -16,7 +17,7 @@
 				</div>
 			</article>
 			<div class="tags-section">
-				<span>ELT test equipment you can rely on</span>
+				<span>Suitable for:</span>
 				<div class="tags-container">
 					<div>
 						<span>Aviation safety inspectors</span>
@@ -33,5 +34,5 @@
 </template>
 
 <style scoped>
-	@import "caption-style.scss";
+@import "caption-style.scss";
 </style>

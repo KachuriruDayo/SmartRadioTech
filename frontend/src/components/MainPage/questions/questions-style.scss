@@ -1,3 +1,19 @@
+.questions-title {
+  cursor: pointer;
+  font-size: clamp(1rem, 0.667rem + 0.667vw, 1.125rem);
+  font-weight: 600;
+}
+
+.text-title {
+  font-size: clamp(1rem, 0.667rem + 0.667vw, 1.125rem);
+  font-weight: 700;
+}
+
+.text-regular {
+  font-size: 16px;
+  font-weight: 400;
+}
+
 section {
   display: flex;
   justify-content: space-between;
@@ -28,9 +44,18 @@ section {
 }
 
 .dropdown-block {
+  cursor: pointer;
   width: clamp(37.063rem, 1.938rem + 43.906vw, 54.625rem);
+  padding: 20px;
   background-color: transparent;
+  border-radius: 10px;
   border: 1px solid #DDDDDD;
+
+  p {
+    margin: 10px 0;
+    font-size: 16px;
+    font-weight: 400;
+  }
 }
 
 .dropdown-container {
@@ -59,16 +84,16 @@ section {
   .dropdown-block {
     width: 100%;
   }
-
-  .arrow-icon {
-    width: 35px;
-  }
 }
 
 @media screen and (max-width: 800px) {
   section {
     margin: 0 clamp(0rem, -2.045rem + 9.091vw, 2.5rem);
     padding: 40px clamp(1.25rem, 0.227rem + 4.545vw, 2.5rem);
+  }
+
+  .questions-title {
+    max-width: clamp(13.25rem, -8.083rem + 42.667vw, 21.25rem);
   }
 
   .dropdown-text {

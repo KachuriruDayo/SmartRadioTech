@@ -1,0 +1,197 @@
+@import "@/assets/scss/variables";
+
+section {
+  position: relative;
+  margin-bottom: 80px;
+
+  h1 {
+    width: clamp(37.5rem, 0rem + 46.875vw, 56.25rem);
+    font-size: 32px;
+    font-weight: 600;
+    color: #0C92BF;
+    text-wrap: balance;
+    padding-top: 91px;
+    padding-left: clamp(2.5rem, -2.5rem + 6.25vw, 5rem);
+  }
+}
+
+.overlay-container {
+  overflow: hidden;
+}
+
+.product-image {
+  width: 562px;
+  height: 847px;
+  background-image: url("@/assets/media_content/ELT_Tester_406_03_photo.png");
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: absolute;
+  right: clamp(0rem, -12.5rem + 15.625vw, 6.25rem);
+  top: clamp(0rem, -3.75rem + 4.688vw, 1.875rem);
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  background-image: url("@/assets/media_content/captionProduct.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: absolute;
+  z-index: -1;
+}
+
+.content {
+  position: relative;
+  padding: 0 clamp(2.5rem, -2.5rem + 6.25vw, 5rem) clamp(2.5rem, -2rem + 5.625vw, 4.75rem) clamp(2.5rem, -2.5rem + 6.25vw, 5rem);
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-bottom: clamp(8.75rem, -1.25rem + 12.5vw, 13.75rem);
+
+  article {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: clamp(30.25rem, 6.25rem + 30vw, 42.25rem);
+
+    h2 {
+      display: block;
+      margin-top: 20px;
+      font-size: clamp(1.625rem, 1.318rem + 1.364vw, 2rem);
+      font-weight: 400;
+    }
+  }
+}
+
+.checkmark-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  span {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: clamp(0.875rem, 0.773rem + 0.455vw, 1rem);
+  }
+}
+
+.buttons-container {
+  display: flex;
+  gap: 10px;
+}
+
+.request-button {
+  height: 54px;
+  padding: 15px 40px;
+  background-color: #0C92BF;
+  border: none;
+  border-radius: 6px;
+  text-align: center;
+
+  span {
+    font-family: 'Manrope', serif;
+    color: #fff;
+    font-size: 16px;
+    font-weight: $--bold;
+    white-space: nowrap;
+  }
+}
+
+.details-button {
+  height: 54px;
+  padding: 15px 40px;
+  background-color: transparent;
+  border: 1px solid #363843;
+  border-radius: 6px;
+
+  span {
+    font-family: 'Manrope', serif;
+    color: #363843;
+    font-size: 16px;
+    font-weight: $--bold;
+    white-space: nowrap;
+  }
+}
+
+@media screen and (max-width: 1278px) {
+  section {
+    margin-bottom: 0;
+  }
+
+  .content {
+    padding-bottom: clamp(3.125rem, -6.25rem + 18.75vw, 8.75rem);
+    margin-bottom: 40px;
+  }
+
+  .product-image {
+    width: clamp(17rem, -13.208rem + 60.417vw, 35.125rem);
+    height: clamp(23.063rem, -26.729rem + 99.583vw, 52.938rem);
+    right: clamp(0rem, 5rem + -6.25vw, 1.875rem);
+  }
+}
+
+@media screen and (max-width: 1170px) {
+  section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .content {
+    margin-bottom: 0;
+
+    article {
+      width: clamp(20rem, 16.924rem + 13.671vw, 26.75rem);
+      margin-top: 20px;
+      gap: 20px;
+    }
+  }
+
+  .overlay-container {
+    height: clamp(18.938rem, -25.229rem + 88.333vw, 45.438rem);
+    position: relative;
+
+    h1 {
+      margin: clamp(1.25rem, 0.227rem + 4.545vw, 2.5rem);
+      padding: 0 0 clamp(13.25rem, 32.439rem + -38.378vw, 4.375rem) 0;
+      font-size: clamp(1.625rem, 1.318rem + 1.364vw, 2rem);
+    }
+  }
+}
+
+
+@media screen and (max-width: 798px) {
+  section {
+
+    h1 {
+      width: clamp(18.563rem, 12.375rem + 27.5vw, 26.125rem);
+    }
+  }
+
+  .overlay-container {
+    height: 362px;
+  }
+
+  .content {
+    padding: 0 clamp(1.25rem, 0.227rem + 4.545vw, 2.5rem) 40px clamp(1.25rem, 0.227rem + 4.545vw, 2.5rem);
+  }
+
+  .product-image {
+    width: 272px;
+    height: 369px;
+    top: 60px;
+    right: 0;
+  }
+
+  .buttons-container {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .overlay {
+    background-position: right center;
+  }
+}

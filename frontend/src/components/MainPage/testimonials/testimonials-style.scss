@@ -4,15 +4,12 @@ section {
   gap: 30px;
   padding: clamp(2.5rem, -0.5rem + 3.75vw, 4rem) clamp(6.313rem, 0.438rem + 7.344vw, 9.25rem);
   background-color: #F1F1F2;
-  overflow: hidden;
+  overflow-x: hidden;
 
   h2 {
     font-size: 32px;
+    font-weight: 400;
     padding: 0 20px;
-  }
-
-  div {
-    height: 400px;
   }
 }
 
@@ -21,12 +18,12 @@ section {
   gap: 10px;
 
   article {
-    width: 432px;
+    max-width: clamp(18.75rem, 0rem + 20.833vw, 25rem);
     display: flex;
     flex-direction: column;
     justify-content: left;
     gap: 20px;
-    padding: 40px;
+    padding: clamp(1.25rem, -0.833rem + 4.167vw, 2.5rem);
     border-radius: 10px;
     background-color: #ffffff;
 
@@ -41,30 +38,134 @@ section {
   display: flex;
   flex-direction: column;
   gap: 15px;
+
+  svg {
+    width: clamp(15.563rem, 4.833rem + 21.458vw, 22rem);
+  }
 }
 
 .buttons-container {
-  display: flex;
+  display: none;
+  visibility: hidden;
+  //display: flex;
   gap: 10px;
   height: fit-content;
 
   button {
     width: 50px;
     height: 50px;
+    align-self: center;
     border: 1px solid #363843;
+    border-radius: 50%;
+  }
+
+  div {
     border-radius: 50%;
   }
 }
 
-#left {
+.inActive {
+  opacity: 0.5;
+}
+
+#legacy {
+  width: 94px;
+}
+
+#phenix {
+  width: 205px;
+}
+
+#prime {
+  width: 49px;
+}
+
+#harbour {
+  width: 191px;
+}
+
+#prev {
   rotate: 90deg;
 }
 
-#right {
+#next {
   rotate: -90deg;
 }
 
-@media screen and (max-width: 1280px) {
+.carusel-container {
+  display: flex;
+  align-items: center;
+  height: 70px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.articles-container {
+  position: absolute;
+  display: flex;
+  gap: 10px;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+.carusel {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-radius: 10px;
+  justify-content: space-around;
+
+  article {
+    display: flex;
+    align-items: center;
+    max-width: 320px;
+    height: 70px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    transition: transform 0.1s ease-in-out;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+@keyframes marquee {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -162%;
+  }
+}
+
+.animate {
+  width: 3200%;
+  animation: marquee 30s linear infinite;
+}
+
+.animate:hover {
+  animation-play-state: paused;
+}
+
+.carusel {
+  article:hover {
+    transform: scale(1.05);
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .buttons-container {
+    display: flex;
+    visibility: visible;
+  }
+}
+
+@media screen and (max-width: 1278px) {
   section {
     padding: clamp(2.5rem, -0.5rem + 3.75vw, 4rem) clamp(1.25rem, -0.833rem + 4.167vw, 2.5rem);
 
@@ -86,5 +187,48 @@ section {
       font-size: clamp(0.875rem, 0.667rem + 0.417vw, 1rem);
       }
     }
+  }
+
+  @keyframes marquee {
+    0% {
+      left: 0;
+    }
+    100% {
+      left: -235%;
+    }
+  }
+
+  .animate {
+    animation: marquee 30s linear infinite;
+  }
+}
+
+@media screen and (max-width: 798px) {
+  @keyframes marquee {
+    0% {
+      left: 0;
+    }
+    100% {
+      left: -290%;
+    }
+  }
+
+  .animate {
+    animation: marquee 30s linear infinite;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  @keyframes marquee {
+    0% {
+      left: 0;
+    }
+    100% {
+      left: -700%;
+    }
+  }
+
+  .animate {
+    animation: marquee 30s linear infinite;
   }
 }

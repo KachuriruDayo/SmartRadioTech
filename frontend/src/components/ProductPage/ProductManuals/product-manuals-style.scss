@@ -1,0 +1,288 @@
+.title-style {
+  font-size: 32px;
+  font-weight: 400;
+}
+
+section {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 0 clamp(8.813rem, -2.563rem + 14.219vw, 14.5rem);
+}
+
+.flex_block {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.dimensions {
+  justify-content: space-between;
+  width: clamp(24.563rem, 1.188rem + 29.219vw, 36.25rem);
+}
+
+.dimension-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 40px;
+  border-radius: 10px;
+  border: 1px solid #DDDDDD;
+
+  img {
+    width: clamp(19.563rem, 10.938rem + 10.781vw, 23.875rem);
+  }
+}
+
+.dimension-text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  span {
+    font-size: 16px;
+    font-weight: 600;
+    display: block;
+    width: fit-content;
+    border-radius: 10px;
+    border: 1px solid #DDDDDD;
+    padding: 10px 20px;
+    white-space: nowrap;
+  }
+}
+
+.conditions {
+
+  p {
+    display: block;
+    border-radius: 10px;
+    border: 1px solid #DDDDDD;
+    padding: 30px 40px;
+  }
+}
+
+.demonstration {
+  overflow-x: hidden;
+}
+
+.demonstration-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.demonstration-video {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  border: 1px solid #DDDDDD;
+  border-radius: 10px;
+  padding: clamp(0.438rem, -3.688rem + 5.156vw, 2.5rem);
+  overflow-x: hidden;
+}
+
+.video-description {
+  max-width: clamp(32.813rem, 10.938rem + 27.344vw, 43.75rem);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: clamp(0rem, 5.625rem + -4.688vw, 1.875rem);
+}
+
+.video-slider {
+  position: relative;
+  overflow: hidden;
+}
+
+#play {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  left: 44%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+
+  div {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #32323233;
+    backdrop-filter: blur(49.3px);
+
+    svg {
+      position: absolute;
+      top: 35%;
+      left: 40%;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 1px solid #fff;
+
+    }
+  }
+}
+
+.svg_active {
+  transform: rotate(90deg) !important;
+}
+
+.button_prev {
+  top: 40% !important;
+  left: 0 !important;
+}
+
+.video-container{
+  display: flex;
+}
+
+.video-container,
+.slider-item {
+  border-radius: 10px;
+}
+
+.video-item-container {
+  position: relative;
+}
+
+.slider-item {
+  width: 100%;
+  object-fit: cover;
+}
+
+.YT-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #0C92BF;
+  margin-bottom: 5px;
+}
+
+.product-manuals {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+
+  article {
+    width: clamp(22.75rem, -37.375rem + 75.156vw, 52.813rem);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-radius: 10px;
+    border: 1px solid #DDDDDD;
+    padding: 40px;
+  }
+}
+
+.article-description {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  div {
+    cursor: pointer;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+    a {
+      font-weight: 600;
+      color: #0C92BF;
+    }
+  }
+}
+
+@media screen and (max-width: 1480px) {
+  .product-manuals {
+    flex-direction: column;
+  }
+
+  .YT-link {
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 1278px) {
+  section {
+     padding: 0 clamp(2.5rem, -8.021rem + 21.042vw, 8.813rem);
+     flex-direction: column;
+  }
+
+  .dimensions {
+    width: 100%;
+  }
+
+  .dimension {
+    width: 100%;
+  }
+
+  .dimension-info {
+    flex-direction: row;
+    gap: 40px;
+  }
+
+  .product-manuals {
+    flex-direction: row;
+  }
+}
+
+@media screen and (max-width: 798px) {
+  section {
+    padding: 0 clamp(1.25rem, 0.227rem + 4.545vw, 2.5rem);
+  }
+
+  #play {
+    top: clamp(2.813rem, -2.557rem + 23.864vw, 9.375rem);
+    left: clamp(6.875rem, -2.841rem + 43.182vw, 18.75rem);
+  }
+
+  .dimension-info {
+    padding: clamp(1.25rem, 0.227rem + 4.545vw, 2.5rem);
+
+    img {
+      width: clamp(15.375rem, 12.972rem + 10.682vw, 18.313rem);
+    }
+  }
+
+  .product-manuals {
+
+    article {
+      width: clamp(20rem, 18.722rem + 5.682vw, 21.563rem);
+    }
+  }
+
+  .video-container{
+    grid-template-columns: repeat(2, clamp(17.688rem, 6.949rem + 47.727vw, 30.813rem));
+    grid-template-rows: 1fr;
+  }
+
+  .video-description {
+    padding: clamp(0rem, -1.534rem + 6.818vw, 1.875rem);
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .dimension-info {
+    flex-direction: column;
+  }
+
+  .video-container {
+    margin-left: 0 !important;
+  }
+
+  .product-manuals {
+    flex-direction: column;
+  }
+}

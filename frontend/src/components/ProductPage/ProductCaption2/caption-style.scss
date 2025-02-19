@@ -1,0 +1,196 @@
+section {
+  position: relative;
+  margin-bottom: 80px;
+
+  h1 {
+    font-size: 32px;
+    font-weight: 600;
+    color: #0C92BF;
+    padding-top: 91px;
+    padding-left: clamp(2.5rem, -2.5rem + 6.25vw, 5rem);
+  }
+}
+
+.overlay-container {
+  overflow: hidden;
+}
+
+.product-image {
+  width: 562px;
+  height: 847px;
+  background-image: url("@/assets/media_content/ELT_Tester_i406_03_Mini_foto.png");
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: absolute;
+  right: clamp(0rem, -32.125rem + 40.156vw, 16.063rem);
+  top: 0;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  background-image: url("@/assets/media_content/photo_i406mini.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  z-index: -2;
+}
+
+.content {
+  position: relative;
+  padding: 0 clamp(2.5rem, -2.5rem + 6.25vw, 5rem) clamp(2.5rem, -2rem + 5.625vw, 4.75rem) clamp(2.5rem, -2.5rem + 6.25vw, 5rem);
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-bottom: clamp(14.688rem, 15.813rem + -1.406vw, 14.125rem);
+
+  article {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 676px;
+
+    h2 {
+      display: block;
+      margin-top: 20px;
+      font-size: clamp(1.625rem, 1rem + 1.25vw, 2rem);
+    }
+  }
+}
+
+.checkmark-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  span {
+    font-size: clamp(0.875rem, 0.667rem + 0.417vw, 1rem);
+  }
+}
+
+.svg_checkmark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 15px;
+  height: 10px;
+}
+
+.buttons-container {
+  display: flex;
+  gap: 10px;
+}
+
+.request-button {
+  height: 54px;
+  padding: 15px 40px;
+  background-color: #0C92BF;
+  border: none;
+  border-radius: 6px;
+  text-align: center;
+
+  span {
+    color: #fff;
+    font-family: 'Manrope', serif;
+    font-size: 16px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+}
+
+.details-button {
+  height: 54px;
+  padding: 15px 40px;
+  background-color: transparent;
+  border: 1px solid #363843;
+  border-radius: 6px;
+
+  span {
+    color: #363843;
+    font-family: 'Manrope', serif;
+    font-size: 16px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+}
+
+@media screen and (max-width: 1550px) {
+  .overlay {
+    background-position: -160px center;
+  }
+
+}
+
+@media screen and (max-width: 1278px) {
+  section {
+    margin-bottom: 0;
+  }
+
+  .content {
+    padding-bottom: clamp(3.125rem, -6.25rem + 18.75vw, 8.75rem);
+    margin-bottom: clamp(5rem, -1.25rem + 12.5vw, 8.75rem);
+  }
+
+  .product-image {
+    width: clamp(27.5rem, 15.313rem + 24.375vw, 34.813rem);
+    height: clamp(41.25rem, 21.771rem + 38.958vw, 52.938rem);
+  }
+}
+
+@media screen and (max-width: 1170px) {
+  section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .overlay {
+    background-position: center;
+  }
+
+  .content {
+    margin-bottom: 0;
+
+    article {
+      width: clamp(20rem, 16.924rem + 13.671vw, 26.75rem);
+      margin-top: 20px;
+      gap: 20px;
+    }
+  }
+
+  .overlay-container {
+    position: relative;
+
+    h1 {
+      text-wrap: balance;
+      word-break: auto-phrase;
+      width: clamp(15.625rem, -34.375rem + 100vw, 34.375rem);
+      margin: clamp(1.25rem, 0.227rem + 4.545vw, 2.5rem);
+      padding: 0 0 clamp(9.375rem, 2.813rem + 29.167vw, 13.75rem) 0;
+      font-size: clamp(1.625rem, 1.318rem + 1.364vw, 2rem);
+    }
+  }
+}
+
+
+@media screen and (max-width: 798px) {
+  .content {
+    padding: 0 clamp(1.25rem, 0.227rem + 4.545vw, 2.5rem) 40px clamp(1.25rem, 0.227rem + 4.545vw, 2.5rem);
+  }
+
+  .product-image {
+    width: clamp(12.625rem, 0.455rem + 54.091vw, 27.5rem);
+    height: clamp(25rem, 9.403rem + 69.318vw, 44.063rem);
+  }
+
+  .buttons-container {
+    flex-direction: column;
+  }
+}
